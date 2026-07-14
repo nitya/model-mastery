@@ -34,7 +34,7 @@ require_env() {
   fi
 }
 
-for key in AZURE_RESOURCE_GROUP FOUNDRY_ACCOUNT_NAME AZURE_AI_ENDPOINT FOUNDRY_PROJECT_ENDPOINT COMMAND_A_DEPLOYMENT EMBED_V4_DEPLOYMENT RERANK_DEPLOYMENT OPENAI_EMBED_DEPLOYMENT; do
+for key in AZURE_RESOURCE_GROUP FOUNDRY_ACCOUNT_NAME AZURE_AI_ENDPOINT FOUNDRY_PROJECT_ENDPOINT COMMAND_A_PLUS_DEPLOYMENT EMBED_V4_DEPLOYMENT RERANK_DEPLOYMENT OPENAI_EMBED_DEPLOYMENT; do
   require_env "$key"
 done
 
@@ -164,12 +164,12 @@ check_endpoint_host() {
 }
 
 check_deployment "OpenAI embeddings" "$OPENAI_EMBED_DEPLOYMENT" "text-embedding-3-small"
-check_deployment "Command A" "$COMMAND_A_DEPLOYMENT" "cohere-command-a"
+check_deployment "Command A Plus" "$COMMAND_A_PLUS_DEPLOYMENT" "Cohere-command-a-plus-05-2026"
 check_deployment "Embed v4" "$EMBED_V4_DEPLOYMENT" "embed-v-4-0"
 check_deployment "Rerank v4" "$RERANK_DEPLOYMENT" "Cohere-rerank-v4.0-pro"
 
 check_model_catalog "OpenAI embeddings" "text-embedding-3-small"
-check_model_catalog "Command A" "cohere-command-a"
+check_model_catalog "Command A Plus" "Cohere-command-a-plus-05-2026"
 check_model_catalog "Embed v4" "embed-v-4-0"
 check_model_catalog "Rerank v4" "Cohere-rerank-v4.0-pro"
 
@@ -182,9 +182,9 @@ post_json \
   '{"input":"travel policy for hotels"}'
 
 post_json \
-  "Command A chat" \
+  "Command A Plus chat" \
   "$BASE_ENDPOINT/providers/cohere/v2/chat" \
-  "{\"model\":\"$COMMAND_A_DEPLOYMENT\",\"messages\":[{\"role\":\"user\",\"content\":\"Say hello in three words.\"}],\"max_tokens\":16}"
+  "{\"model\":\"$COMMAND_A_PLUS_DEPLOYMENT\",\"messages\":[{\"role\":\"user\",\"content\":\"Say hello in three words.\"}],\"max_tokens\":16}"
 
 post_json \
   "Embed v4" \
@@ -210,16 +210,16 @@ post_json \
 # ---------------------------------------------------------------------------
 if AI_TOKEN="$(az account get-access-token --resource https://cognitiveservices.azure.com --query accessToken --output tsv 2>/dev/null)"; then
   post_json_bearer \
-    "Command A via MAF OpenAIChatClient path (Responses API)" \
+    "Command A Plus via MAF OpenAIChatClient path (Responses API)" \
     "$BASE_ENDPOINT/openai/v1/responses" \
     "$AI_TOKEN" \
-    "{\"model\":\"$COMMAND_A_DEPLOYMENT\",\"input\":\"Say hello in three words.\",\"max_output_tokens\":16}" \
+    "{\"model\":\"$COMMAND_A_PLUS_DEPLOYMENT\",\"input\":\"Say hello in three words.\",\"max_output_tokens\":16}" \
     3
   post_json_bearer \
-    "Command A via /openai/v1/chat/completions" \
+    "Command A Plus via /openai/v1/chat/completions" \
     "$BASE_ENDPOINT/openai/v1/chat/completions" \
     "$AI_TOKEN" \
-    "{\"model\":\"$COMMAND_A_DEPLOYMENT\",\"messages\":[{\"role\":\"user\",\"content\":\"Say hello in three words.\"}],\"max_tokens\":16}" \
+    "{\"model\":\"$COMMAND_A_PLUS_DEPLOYMENT\",\"messages\":[{\"role\":\"user\",\"content\":\"Say hello in three words.\"}],\"max_tokens\":16}" \
     3
 else
   fail "Could not acquire token for account-level /openai/v1 probe"

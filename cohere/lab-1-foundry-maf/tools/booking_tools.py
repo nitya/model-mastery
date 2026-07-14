@@ -2,7 +2,7 @@
 
 The functions in this module deliberately use local JSON catalogs instead of live
 supplier APIs. In the workshop, Foundry exposes their signatures and docstrings
-to Command A as function-calling tools, then the notebook executes the selected
+to Command A Plus as function-calling tools, then the notebook executes the selected
 Python function client-side and sends the result back to the agent.
 """
 

@@ -9,7 +9,7 @@ This module wires four Microsoft Agent Framework (MAF) ``Agent`` instances:
   calling them as tools.
 
 All four agents share a single :class:`OpenAIChatClient` pointed at the
-Cohere Command A deployment in your Microsoft Foundry project. MAF lets you
+Cohere Command A Plus deployment in your Microsoft Foundry project. MAF lets you
 build this with an open-source framework using a model deployed in Foundry —
 the client calls the account-level ``/openai/v1`` endpoint exposed by your
 Foundry account, which serves both the chat completions and responses APIs.
@@ -65,13 +65,13 @@ def make_chat_client(
     intermittent 404s at the service layer. The account-level path avoids
     both issues.
 
-    Reads ``AZURE_AI_ENDPOINT`` and ``COMMAND_A_DEPLOYMENT`` from the
+    Reads ``AZURE_AI_ENDPOINT`` and ``COMMAND_A_PLUS_DEPLOYMENT`` from the
     environment when arguments are omitted, matching the env-var contract
     Lab 0 establishes for the rest of the workshop.
     """
     base = endpoint or os.environ["AZURE_AI_ENDPOINT"]
     base_url = f"{base.rstrip('/')}/openai/v1"
-    deployment = model or os.getenv("COMMAND_A_DEPLOYMENT", "command-a")
+    deployment = model or os.getenv("COMMAND_A_PLUS_DEPLOYMENT", "command-a-plus")
     cred = credential or DefaultAzureCredential()
     return OpenAIChatClient(
         model=deployment,

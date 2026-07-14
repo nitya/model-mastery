@@ -1,0 +1,28 @@
+{
+  "name": "Model Mastery Workshops",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "version": "latest",
+      "installBicep": true
+    },
+    "ghcr.io/devcontainers/features/copilot-cli:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/node:2": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "GitHub.copilot-chat",
+        "ms-toolsai.jupyter",
+        "ms-windows-ai-studio.windows-ai-studio"
+      ]
+    }
+  },
+ 
+  "postCreateCommand": "bash .devcontainer/post-create.sh"
+  
+} 

@@ -20,7 +20,7 @@ Each workshop is opinionated about the same end-to-end arc so the muscle memory 
 | # | Workshop | Model family | Status | Start here |
 |---|---|---|---|---|
 | 1 | **Anthropic on Foundry** | Claude family | ☑️ WIP | [`anthropic/`](./anthropic/) |
-| 2 | **Cohere on Foundry** | Command A, Embed v4, Rerank v4 | ✅ Ready | [`cohere/README.md`](./cohere/README.md) |
+| 2 | **Cohere on Foundry** | Command A Plus, Embed v4, Rerank v4 | ✅ Ready | [`cohere/README.md`](./cohere/README.md) |
 | 3 | **Intro To Foundry** | Cross-model platform features | ☑️ WIP  | [`foundry/`](./foundry/) |
 
 > Each workshop is fully self-contained. You can start with whichever model family you care about — there are no cross-workshop prerequisites.

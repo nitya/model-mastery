@@ -2,7 +2,7 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nitya/model-mastery-fork)
 
-> A hands‑on workshop for technical learners (L200–L400) that walks you through deploying Cohere models on **Microsoft Foundry**, then building an agentic travel‑concierge AI app with **Cohere Command A+**, andexploring specialized Cohere capabilities (embed, business graphs, rerank).
+> A hands‑on workshop for technical learners (L200–L400) that walks you through deploying Cohere models on **Microsoft Foundry**, then building an agentic travel‑concierge AI app with **Cohere Command A Plus**, andexploring specialized Cohere capabilities (embed, business graphs, rerank).
 
 
 ## Pre-Requisites
@@ -23,7 +23,7 @@ Think of Foundry as a car factory. A **deployment** is a model made ready to use
 You will:
 
 1. **Stand up Foundry** with four model deployments (Lab 0).
-2. **Build the concierge end‑to‑end** with Command A — tools, grounding, three rounds
+2. **Build the concierge end‑to‑end** with Command A Plus — tools, grounding, three rounds
    of evaluation, a cloud red‑team scan, and a load test that lights up the
    Monitoring tab (Lab 1).
 3. **Specialise** by exploring Cohere's other models on travel‑themed tasks —
@@ -49,8 +49,8 @@ flowchart LR
 
 | Lab | Folder | What it produces | Time estimate |
 | --- | ------ | ---------------- | ------------- |
-| **Lab 0 — Setup** | [`lab-0-setup/`](./lab-0-setup) | A resource group with a Foundry account, project, and four model deployments (`command-a`, `embed-v-4-0`, `Cohere-rerank-v4.0-pro`, `text-embedding-3-small`) and a populated `.env`. | ~20 min |
-| **Lab 1 — Build a Multi-Agent Concierge with the Microsoft Agent Framework** | [`lab-1-foundry-maf/`](./lab-1-foundry-maf) | A local multi-agent travel concierge built with the open-source Microsoft Agent Framework (MAF) using Cohere `command-a` deployed in Microsoft Foundry: orchestrator + flight/hotel/car specialists with booking tools, OpenTelemetry tracing, a four-round evaluation arc (baseline → grounded → custom policy evaluator → multi-agent), and a local red-team scan. | ~90 min |
+| **Lab 0 — Setup** | [`lab-0-setup/`](./lab-0-setup) | A resource group with a Foundry account, project, and four model deployments (`command-a-plus`, `embed-v-4-0`, `Cohere-rerank-v4.0-pro`, `text-embedding-3-small`) and a populated `.env`. | ~20 min |
+| **Lab 1 — Build a Multi-Agent Concierge with the Microsoft Agent Framework** | [`lab-1-foundry-maf/`](./lab-1-foundry-maf) | A local multi-agent travel concierge built with the open-source Microsoft Agent Framework (MAF) using Cohere `command-a-plus` deployed in Microsoft Foundry: orchestrator + flight/hotel/car specialists with booking tools, OpenTelemetry tracing, a four-round evaluation arc (baseline → grounded → custom policy evaluator → multi-agent), and a local red-team scan. | ~90 min |
 | **Lab 2 — Explore Cohere Model Capabilities** | [`lab-2-cohere-capabilities/`](./lab-2-cohere-capabilities) | Three vendor capability notebooks (`lab-2a`/`lab-2b` embed, `lab-2c` rerank), two optional rerank deep-dives, and a "Try it Yourself: Travel" capstone notebook that connects what you learned back to the Lab 1 scenario. | ~70 min |
 
 An **evaluator** is a checker that scores an AI answer, like a reviewer who checks whether the concierge followed policy. A **red-team** scan is a safety test where prompts try to make the agent break rules. **App Insights**, short for Application Insights, collects app logs and timing data so you can see what happened during a run.
@@ -114,7 +114,7 @@ This lab does NOT use `FoundryChatClient`. It uses MAF's `OpenAIChatClient` poin
 If you see this error, check that:
 1. Your `cohere/.env` has `AZURE_AI_ENDPOINT` set.
 2. `agents/travel_agents.py`'s `make_chat_client` builds the URL as `f"{AZURE_AI_ENDPOINT.rstrip('/')}/openai/v1"`.
-3. The `verify.sh` line `Command A via MAF OpenAIChatClient path (Responses API) returned HTTP 200` passes.
+3. The `verify.sh` line `Command A Plus via MAF OpenAIChatClient path (Responses API) returned HTTP 200` passes.
 
 **`verify.sh` shows the account-level Responses probe failing right after provisioning.**
 

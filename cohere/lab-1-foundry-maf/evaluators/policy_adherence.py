@@ -19,7 +19,7 @@ class PolicyAdherenceEvaluator:
 
     Follows the azure-ai-evaluation custom evaluator protocol: a callable whose
     ``__call__`` takes keyword-only ``query`` and ``response`` and returns a
-    JSON-serializable dict. Cohere ``command-a`` is the judge model, reached via
+    JSON-serializable dict. Cohere ``command-a-plus`` is the judge model, reached via
     the Foundry account's OpenAI-compatible endpoint
     (``{AZURE_AI_ENDPOINT}/openai/v1/chat/completions``) — the same path the
     lab's MAF agents use, and the only path that serves Cohere reliably.
@@ -38,7 +38,7 @@ class PolicyAdherenceEvaluator:
         # FOUNDRY_PROJECT_ENDPOINT routes through .../api/projects/<p>/openai/v1
         # which has propagation delays and ~40% intermittent 404s, so we avoid it.
         self.endpoint = endpoint or os.getenv("AZURE_AI_ENDPOINT")
-        self.deployment_name = deployment_name or os.getenv("COMMAND_A_DEPLOYMENT", "command-a")
+        self.deployment_name = deployment_name or os.getenv("COMMAND_A_PLUS_DEPLOYMENT", "command-a-plus")
         self.policy_path = Path(policy_path)
         self.credential = credential or DefaultAzureCredential()
         self.policy_text = self.policy_path.read_text(encoding="utf-8")

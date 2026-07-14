@@ -16,9 +16,18 @@ flowchart LR
 
 You are the platform engineer setting up the **factory floor** that will assemble every AI agent in this workshop. Before anything else can happen — no concierge, no embeddings, no rerank — the factory itself has to exist and be wired up.
 
-Think of **Microsoft Foundry as a car assembly line**. A **Foundry account** is the factory building. A **Foundry project** is one assembly line inside that factory. A **deployment** is a model that has been made ready to call, like an engine installed and tested before it goes into a car.
+Think of **Microsoft Foundry as a car assembly line**. 
 
-The **model** is the engine. The **agent** is the car chassis with its body and features bolted on. The **instructions** you give the agent are the owner's manual. Foundry assembles each car starting with the engine, then adding the body and features so the car does what the customer needs — a race car for speed, a truck for hauling, or a sedan for commuting. Lab 0 stands up the factory, stocks four engines, and turns on the line cameras. Those cameras are **Application Insights**, a service that records app activity so you can monitor later labs.
+- The **Foundry account** is like the factory building. 
+- The **Foundry project** is one assembly line in the factory. 
+- The **model** is the class of engine that can power the car. 
+- A **model deployment** is the installed engine, tested and ready to use.
+- The **agent** is the car chassis with its body and features bolted on. 
+- The **instructions** you give the agent are the owner's manual. 
+
+Foundry assembles each car starting with the engine, then adding the body and features so the car does what the customer needs — a race car for speed, a truck for hauling, or a sedan for commuting. 
+
+Lab 0 sets up the assembly line (project), stocks four engines (deployments), and turns on the assembly line cameras (monitoring). Those cameras power **Application Insights**, a service that records app activity so you can use that later to analyze performance and diagnose issues.
 
 **Figure 1 — Foundry factory topology.**
 
@@ -26,7 +35,7 @@ The **model** is the engine. The **agent** is the car chassis with its body and 
 flowchart TB
     subgraph factory["🏭 Factory (Foundry account)"]
         assembly["🏗️ Assembly line (project)"]
-        assembly --> commandCar["🚗 Agent car<br/>engine: command-a (Command A)"]
+        assembly --> commandCar["🚗 Agent car<br/>engine: command-a-plus (Command A Plus)"]
         assembly --> embedCar["🚗 Agent car<br/>engine: embed-v-4-0 (Embed v4)"]
         assembly --> rerankCar["🚗 Agent car<br/>engine: Cohere-rerank-v4.0-pro (Rerank v4 Pro)"]
         assembly --> openaiCar["🚗 Agent car<br/>engine: text-embedding-3-small (OpenAI)"]
@@ -101,7 +110,7 @@ You still need an Azure subscription or pre-provisioned resource group with quot
 | Deployment | Catalog model | Format | Capacity |
 | --- | --- | --- | --- |
 | `text-embedding-3-small` | `text-embedding-3-small` | OpenAI | 120 |
-| `command-a` | `cohere-command-a` | Cohere | 1 |
+| `command-a-plus` | `Cohere-command-a-plus-05-2026` | Cohere | 1 |
 | `Cohere-rerank-v4.0-pro` | `Cohere-rerank-v4.0-pro` | Cohere | 1 |
 | `embed-v-4-0` | `embed-v-4-0` | Cohere | 1 |
 
@@ -189,7 +198,7 @@ Run:
 `verify.sh` sources `../.env`, confirms the four deployments exist on the Foundry account, checks model catalog lookup commands, and sends a small request to each endpoint:
 
 - OpenAI embeddings through `/openai/deployments/.../embeddings`,
-- Command A through `/providers/cohere/v2/chat`,
+- Command A Plus through `/providers/cohere/v2/chat`,
 - Embed v4 through `/providers/cohere/v2/embed`,
 - Rerank v4 through `/providers/cohere/v2/rerank`.
 

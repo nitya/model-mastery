@@ -124,11 +124,11 @@ require_value "Foundry project" "$PROJECT_RESOURCE_NAME"
 FOUNDRY_PROJECT_NAME="${PROJECT_RESOURCE_NAME##*/}"
 FOUNDRY_PROJECT_ENDPOINT="${FOUNDRY_AI_ENDPOINT%/}/api/projects/${FOUNDRY_PROJECT_NAME}"
 
-COMMAND_A_DEPLOYMENT="$(lookup_deployment_by_model "cohere-command-a")"
+COMMAND_A_PLUS_DEPLOYMENT="$(lookup_deployment_by_model "Cohere-command-a-plus-05-2026")"
 EMBED_V4_DEPLOYMENT="$(lookup_deployment_by_model "embed-v-4-0")"
 RERANK_DEPLOYMENT="$(lookup_deployment_by_model "Cohere-rerank-v4.0-pro")"
 OPENAI_EMBED_DEPLOYMENT="$(lookup_deployment_by_model "text-embedding-3-small")"
-require_value "Command A deployment" "$COMMAND_A_DEPLOYMENT"
+require_value "Command A Plus deployment" "$COMMAND_A_PLUS_DEPLOYMENT"
 require_value "Embed v4 deployment" "$EMBED_V4_DEPLOYMENT"
 require_value "Rerank deployment" "$RERANK_DEPLOYMENT"
 require_value "OpenAI embedding deployment" "$OPENAI_EMBED_DEPLOYMENT"
@@ -158,7 +158,7 @@ ensure_capacity() {
       -o none
   fi
 }
-ensure_capacity "$COMMAND_A_DEPLOYMENT" "cohere-command-a"      100
+ensure_capacity "$COMMAND_A_PLUS_DEPLOYMENT" "Cohere-command-a-plus-05-2026"      100
 ensure_capacity "$EMBED_V4_DEPLOYMENT"  "embed-v-4-0"           100
 ensure_capacity "$RERANK_DEPLOYMENT"    "Cohere-rerank-v4.0-pro" 100
 
@@ -222,7 +222,7 @@ set_env_value "FOUNDRY_ACCOUNT_NAME" "$FOUNDRY_ACCOUNT_NAME"
 set_env_value "FOUNDRY_PROJECT_NAME" "$FOUNDRY_PROJECT_NAME"
 set_env_value "AZURE_AI_ENDPOINT" "$AZURE_AI_ENDPOINT"
 set_env_value "FOUNDRY_PROJECT_ENDPOINT" "$FOUNDRY_PROJECT_ENDPOINT"
-set_env_value "COMMAND_A_DEPLOYMENT" "$COMMAND_A_DEPLOYMENT"
+set_env_value "COMMAND_A_PLUS_DEPLOYMENT" "$COMMAND_A_PLUS_DEPLOYMENT"
 set_env_value "EMBED_V4_DEPLOYMENT" "$EMBED_V4_DEPLOYMENT"
 set_env_value "RERANK_DEPLOYMENT" "$RERANK_DEPLOYMENT"
 set_env_value "OPENAI_EMBED_DEPLOYMENT" "$OPENAI_EMBED_DEPLOYMENT"
@@ -249,7 +249,7 @@ FOUNDRY_ACCOUNT_NAME               $FOUNDRY_ACCOUNT_NAME
 FOUNDRY_PROJECT_NAME               $FOUNDRY_PROJECT_NAME
 AZURE_AI_ENDPOINT                  $AZURE_AI_ENDPOINT
 FOUNDRY_PROJECT_ENDPOINT           $FOUNDRY_PROJECT_ENDPOINT
-COMMAND_A_DEPLOYMENT               $COMMAND_A_DEPLOYMENT
+COMMAND_A_PLUS_DEPLOYMENT               $COMMAND_A_PLUS_DEPLOYMENT
 EMBED_V4_DEPLOYMENT                $EMBED_V4_DEPLOYMENT
 RERANK_DEPLOYMENT                  $RERANK_DEPLOYMENT
 OPENAI_EMBED_DEPLOYMENT            $OPENAI_EMBED_DEPLOYMENT

@@ -1,6 +1,6 @@
 # Lab 1 — Multi-Agent Travel Concierge with Microsoft Agent Framework
 
-> ⏱ ~60 min · 5 notebooks · prerequisites: [Lab 0](../lab-0-setup/SETUP.md) complete, Cohere `command-a` deployed, env vars populated from `cohere/sample.env`.
+> ⏱ ~60 min · 5 notebooks · prerequisites: [Lab 0](../lab-0-setup/SETUP.md) complete, Cohere `command-a-plus` deployed, env vars populated from `cohere/sample.env`.
 >
 > **How to run:** open the notebooks in numbered order (`01` → `05`) and run all cells in each. Everything in this lab runs on your own machine — no agent ever lives in the Foundry portal.
 
@@ -19,7 +19,7 @@ Microsoft Foundry has two ways to run an AI agent:
 1. **Hosted Foundry Agent Service** — Foundry stores the agent definition, runs it, and shows it in the portal. This is the hosted path.
 2. **Local agent runtime** — you write the agent in your own code and call the model deployment from there.
 
-The hosted Agent Service does not support Cohere models today. So if you want a Cohere-powered, multi-agent travel concierge, you build it **locally** with the **Microsoft Agent Framework** (MAF) and point it at the same Cohere `command-a` deployment in your Foundry project. That is exactly what this lab does.
+The hosted Agent Service does not support Cohere models today. So if you want a Cohere-powered, multi-agent travel concierge, you build it **locally** with the **Microsoft Agent Framework** (MAF) and point it at the same Cohere `command-a-plus` deployment in your Foundry project. That is exactly what this lab does.
 
 **MAF** is Microsoft's open-source library for building agents in Python. Think of it as a small kitchen on your laptop: you bring the same ingredient (the model deployment) the hosted restaurant uses, but you cook the dish yourself. Because the kitchen is yours, you can put any chef in it — including Cohere.
 
@@ -39,7 +39,7 @@ flowchart LR
     fc["📚 flights.json"]
     hc["📚 hotels.json"]
     cc["📚 cars.json"]
-    cohere["☁️ Cohere command-a<br/>on Microsoft Foundry"]
+    cohere["☁️ Cohere command-a-plus<br/>on Microsoft Foundry"]
 
     user --> concierge
     concierge -- "flight_agent tool" --> flight
@@ -58,7 +58,7 @@ Each specialist owns the matching `search_*` and `book_*` tools from the catalog
 
 ## 3. What you will do
 
-1. Confirm MAF can reach the Cohere `command-a` deployment through `FoundryChatClient`.
+1. Confirm MAF can reach the Cohere `command-a-plus` deployment through `FoundryChatClient`.
 2. Wire the three specialist agents and the concierge orchestrator with `agent_framework.Agent`.
 3. Turn on **local tracing** so every concierge turn, specialist hop, and tool call is captured as an OpenTelemetry span (printed to the console and, when configured, sent to Application Insights so the Foundry Monitoring tab lights up).
 4. Run a **four-round evaluation arc** with `azure-ai-evaluation` on a 20-prompt workshop dataset (`04-eval-dataset.jsonl`) so the scores stay comparable across runs:
@@ -74,7 +74,7 @@ A **red-team scan** is a safety test where probe prompts try to make the agent b
 
 ## 4. Notebooks
 
-1. `01-verify-cohere.ipynb` — confirm the MAF `FoundryChatClient` can chat with `command-a`.
+1. `01-verify-cohere.ipynb` — confirm the MAF `FoundryChatClient` can chat with `command-a-plus`.
 2. `02-build-multi-agent.ipynb` — assemble the four agents and run end-to-end smoke prompts.
 3. `03-trace-multi-agent.ipynb` — enable MAF's OpenTelemetry instrumentation, run a multi-leg trip, and read the resulting spans locally (and optionally in App Insights).
 4. `04-eval-round1-baseline.ipynb` — **Round 1.** Bare MAF agent, generic instructions, no tools. Run the built-in evaluator panel (Relevance, Coherence, Fluency, Groundedness, plus the agentic evaluators that are available in your install) to set the baseline scores.
@@ -113,7 +113,7 @@ flowchart TB
 
 1. Open this repository in GitHub Codespaces.
 2. Wait for the devcontainer to finish — `requirements.txt` is installed automatically, including this lab's dependencies.
-3. Make sure `cohere/.env` contains your Lab 0 values (`FOUNDRY_PROJECT_ENDPOINT`, `COMMAND_A_DEPLOYMENT`, `AZURE_SUBSCRIPTION_ID`, `AZURE_RESOURCE_GROUP`, `FOUNDRY_PROJECT_NAME`).
+3. Make sure `cohere/.env` contains your Lab 0 values (`FOUNDRY_PROJECT_ENDPOINT`, `COMMAND_A_PLUS_DEPLOYMENT`, `AZURE_SUBSCRIPTION_ID`, `AZURE_RESOURCE_GROUP`, `FOUNDRY_PROJECT_NAME`).
 4. Run `az login` in the Codespaces terminal so `DefaultAzureCredential` can authenticate.
 
 ### Local machine (alternative)

@@ -28,8 +28,8 @@
           "capacity": 120
         },
         {
-          "name": "command-a",
-          "modelName": "cohere-command-a",
+          "name": "command-a-plus",
+          "modelName": "Cohere-command-a-plus-05-2026",
           "modelVersion": "1",
           "modelFormat": "Cohere",
           "skuName": "GlobalStandard",

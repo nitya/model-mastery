@@ -1,0 +1,73 @@
+# Workshop 1: Build a Travel Concierge
+
+**What you'll build:** a travel desk staffed by four AI agents. Three specialists each handle one part of a trip (flights, hotels, cars), and one concierge coordinates them.
+
+>[!Knowledge] Microsoft Foundry can run an agent two ways: it can host the agent for you, or you can run it in your own code. In this lab you'll build the concierge in your own code with the **Microsoft Agent Framework** and point it at your Cohere model in Foundry. Running it yourself gives you full control over how the agents are orchestrated and observed. Same model, your own code.
+
+You'll work through five notebooks: verify, build, trace, evaluate, and red-team. The whole lab takes about **60 minutes**.
+
+---
+
+## Notebook 01: Verify the model
+
+**Goal:** confirm your code can reach the Cohere model before building anything on it.
+
+>[!note] Reminder: free resources as you go-select **Restart** at the top of any finished notebook before running the next one.
+
+1. [] Open **`01-verify-cohere.ipynb`**.
+
+	![5x2xyra6.png](images/5x2xyra6.png)
+
+1. [] Open a new terminal using **Terminal > New Terminal**. It will open at the bottom center of VS Code.
+
+	![oi3snrp4.png](images/oi3snrp4.png)
+
+1. [] Send `az login` in the terminal.
+
+	![ust4w5pi.png](images/ust4w5pi.png)
+
+1. [] Minimize VS Code by selecting it from the toolbar.
+
+	![w2s6qfk4.png](images/w2s6qfk4.png)
+
+1. [] Choose **Work or school account** and select **Continue**.
+	
+  ![2lw561sr.png](images/2lw561sr.png)
+
+1. [] Sign in with the following credentials:
+
+	**Azure Username**: +++@lab.CloudPortalCredential(User1).Username+++  
+	**TAP**: +++@lab.CloudPortalCredential(User1).AccessToken+++
+
+1. [] Select **Yes**, then return to VS Code. 
+	
+  ![6df8lttl.png](images/6df8lttl.png)
+
+1. [] In the terminal, select the default subscription:
+
+	![ks7zq7hj.png](images/ks7zq7hj.png)
+
+	>[!note] Close the terminal once logged in.
+  
+  ![zru9azd5.png](images/zru9azd5.png)
+
+1. [] Run each cell in order, reading the short notes between them. 
+
+	![zrm8fc7r.png](images/zrm8fc7r.png)
+
+1. [] The first time you execute a cell you'll see a message like this: 
+	
+  ![xvf2hvzv.png](images/xvf2hvzv.png)
+
+	>[!note] Select **Allow**.
+
+1. [] Confirm each cell prints a reasonable output and/or a sensible reply from the model.
+
+	![mfyt53vz.png](images/mfyt53vz.png)
+	![w56l55if.png](images/w56l55if.png)
+
+	>[!note] Look for something like this:
+![hohcz8ot.png](images/hohcz8ot.png)  
+If a cell fails with an authentication error, return to the welcome page and run `az login` again.
+
+>[!Knowledge] This notebook opens a chat connection to the Cohere `command-a-plus` model and sends one message. If you get a reply, the connection works and you're ready to build.

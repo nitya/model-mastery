@@ -1,0 +1,13 @@
+# What you learned
+
+You have completed the workshop. To recap:
+
+- **Lab 1:** you built a Cohere-powered multi-agent concierge with the Microsoft Agent Framework, then traced it, evaluated it across four rounds, and red-teamed it for safety.
+- **Lab 2:** you saw when to use each Cohere capability:
+  - **Embeddings** for finding things by meaning.
+  - **Multimodal embeddings** for searching images such as charts and graphs.
+  - **Rerank** for re-sorting a shortlist against a detailed need.
+
+>[!Knowledge] One practical note to remember: these Cohere models are called on Foundry through the Cohere routes (the `cohere` client pointed at a `/providers/cohere` address).
+
+Thank you for attending. You now have a working pattern for building, measuring, and improving Cohere-powered applications on Microsoft Foundry.

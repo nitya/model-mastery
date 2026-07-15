@@ -1,0 +1,23 @@
+## Notebook 03: Trace the concierge
+
+**Goal:** Turn on tracing so you can see the exact path a request takes through the agents.
+
+>[!note] Reminder: before you start, **Restart** the kernel of the previous notebook to free its resources.
+
+1. [] Open **`03-trace-multi-agent.ipynb`**.
+
+	![4nto66aj.png](images/4nto66aj.png)
+
+1. [] Run the cells that configure tracing and capture the activity.
+
+1. [] Run the concierge with tracing on, then read the resulting trace. After a few seconds, you should see some telemetry.
+
+	![aipov8ki.png](images/aipov8ki.png)
+
+1. [] Run the last cell, so you see the information that has been traced by the action of the agent, now in table format.
+
+1. [] In the output from the last cell, select **text editor** to open the output in a text editor for a more complete view.
+
+	![sqq730gw.png](images/sqq730gw.png)
+
+>[!Knowledge] **Tracing** records every step a request takes: each agent turn and each tool call. It answers the question "how did the concierge arrive at this answer?" This is one of three things you'll check in this lab: tracing shows *how it happened*, evaluation shows *how good* it is, and red-teaming shows *how safe* it is.

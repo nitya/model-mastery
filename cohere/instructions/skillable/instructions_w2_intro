@@ -1,0 +1,21 @@
+# Lab 2: Explore Cohere Capabilities
+
+Currently, the travel concierge from Lab 1 relies on keyword-based search to find matches. We can improve the search functionality by bringing in two powerful ML models from Cohere: the Cohere vector embedding model and the Cohere re-ranking model.
+
+Using the vector embedding model, we can extend the search to go beyond keyword-only searches and search by semantic similarity instead. Since the model supports multimodal embeddings, we can even use it to search images.
+
+Using the re-ranking model, we can refine the search results that come back from the vector search. The re-ranking model looks at each result, scores it according to the user's original query, and outputs a re-ranked list of results.
+
+>[!Knowledge] An **embedding** encodes text or an image as a vector of numbers: similar meanings get encoded into vectors that sit closer together in a multi-dimensional vector space, so you can find things by meaning instead of exact words. **Rerank** takes a first shortlist and sorts it again using a more detailed need. **Multimodal** means the same embedding works on images, such as charts, not just text.
+
+**How each capability helps the concierge:**
+
+| If the concierge could ... | The Cohere capability | Notebook |
+| --- | --- | --- |
+| find trips that feel like a past good one, even if worded differently | search by meaning (embeddings) | 2a |
+| search charts and business-graph images, not just text | multimodal embeddings | 2b |
+| re-sort hotels after you say "no red-eyes, and I need a gym" | rerank | 2c |
+
+This lab takes about **45 minutes**.
+
+>[!Alert] Open each Lab 2 notebook from inside the **lab-2-cohere-capabilities** folder, so the data and image files it needs are found correctly. Your environment is set up for this; just open the notebook and run.

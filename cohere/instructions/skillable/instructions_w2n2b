@@ -1,0 +1,13 @@
+## Lab 2, Notebook 2b: Search images (multimodal)
+
+**Goal:** index images of business graphs and search them by meaning.
+
+>[!note] Reminder: before you start, **Restart** the kernel of the previous notebook to free its resources.
+
+1. [] Open **`lab-2b-embed.ipynb`** from the **lab-2-cohere-capabilities** folder.
+2. [] Run the cells that index the graph images into a local search store.
+3. [] Run the three search examples and see the best-matching image returned for each query.
+
+>[!Knowledge] Embed v4 is **multimodal**: it encodes images into the same kind of vector as text, so you can search a pile of charts and graphs by describing what you want. This is Cohere's standout feature and removes the need to manually tag or parse images.
+
+>[!Hint] If a cell reports a missing file, you likely opened the notebook from the wrong folder. Close it and reopen it from inside the **lab-2-cohere-capabilities** folder.

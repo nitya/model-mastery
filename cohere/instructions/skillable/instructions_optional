@@ -1,0 +1,8 @@
+## Optional deep-dives
+
+If time allows, two extra rerank notebooks go further. They reinforce the idea rather than introduce new concepts, so skip them if the session is tight.
+
+>[!note] Reminder: as with the other notebooks, **Restart** the previous notebook's kernel before running these to free its resources.
+
+1. [] *(Optional)* **`optional-lab-rerank_structured_data.ipynb`**: rerank structured records such as emails and table rows.
+2. [] *(Optional)* **`optional-lab-rerank_wikipedia_search.ipynb`**: rerank the results of a plain keyword search.

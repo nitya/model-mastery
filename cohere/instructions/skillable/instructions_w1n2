@@ -1,0 +1,33 @@
+## Notebook 02: Build the multi-agent concierge
+
+**Goal:** assemble the three specialist agents and the concierge that coordinates them, then plan a full trip.
+
+>[!note] Reminder: before you start, **Restart** the kernel of the previous notebook to free its resources.
+
+1. [] Open **`02-build-multi-agent.ipynb`**.
+
+	![x2ti0ak0.png](images/x2ti0ak0.png)
+
+1. [] Run the cell that prepares the notebook and the one that builds the three specialists (flight, hotel, car).
+
+	![pm9acawj.png](images/pm9acawj.png)
+	![oooqf72o.png](images/oooqf72o.png)
+
+1. [] Run the cell that tries one specialist on its own.
+
+	![a0lxdhme.png](images/a0lxdhme.png)
+
+1. [] Run the cell that assembles the concierge and plan a multi-leg trip.
+
+	![rwtf6eky.png](images/rwtf6eky.png)
+
+1. [] Finally, execute the cells that run a multi-leg trip end-to-end.
+
+	![3629t9bg.png](images/3629t9bg.png)
+	![vr47v5ow.png](images/vr47v5ow.png)
+
+	>[!tip] These last cells will take about a minute to complete. All the orchestration is happening right now. We haven't surfaced yet what's going on under the hood, but don't worry, you'll see that later on in the **Observability** part.
+
+>[!Knowledge] The concierge does not book flights or hotels itself. It calls each specialist as if the specialist were a single tool, and the specialist decides what to do. This pattern is called **agents as tools**, and it is a clean way to coordinate several agents from one place.
+
+**What to notice:** watch the concierge hand off each leg of the trip to the right specialist.

@@ -1,0 +1,16 @@
+## Notebook 04: Evaluate in four rounds (OPTIONAL)
+
+**Goal:** measure answer quality with the same test set across four versions of the agent, so you can see each improvement clearly.
+
+You'll run four notebooks. Each uses the same set of test questions and the same scoring, so the results are comparable. Only the agent changes between rounds.
+
+>[!note] Reminder: these rounds run back-to-back-**Restart** each round's kernel before starting the next one to free its resources.
+
+1. [] **Round 1, baseline.** Open **`04-eval-round1-baseline.ipynb`** and run it. A plain agent with generic instructions. This sets your starting scores.
+2. [] **Round 2, grounded.** Open **`04-eval-round2-grounded.ipynb`** and run it. The same agent, now given the travel policy and catalog details. Compare the scores against Round 1.
+3. [] **Round 3, policy check.** Open **`04-eval-round3-policy-evaluator.ipynb`** and run it. Adds a custom check that grades each answer against the travel policy.
+4. [] **Round 4, full concierge.** Open **`04-eval-round4-multi-agent.ipynb`** and run it. Swaps in the full multi-agent concierge with booking tools.
+
+>[!Knowledge] Keeping the test questions and the scoring identical across all four rounds is what makes the comparison fair. You can see exactly what grounding, a custom policy check, and multi-agent coordination each add.
+
+>[!tip] After each round, glance at the scores before moving on. The story is in how they change from round to round.

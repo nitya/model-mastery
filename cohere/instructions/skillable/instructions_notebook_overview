@@ -1,0 +1,22 @@
+# How to run the notebooks
+
+Each lab is a set of **notebooks**: documents that mix explanation with runnable code cells.
+
+**To run a cell:** select it, then press **Shift+Enter**. The cell runs and moves to the next one.
+
+**Always run cells in order, top to bottom**, in each notebook. Later cells depend on earlier ones.
+
+**Reading the status of a cell:**
+
+- A number in brackets such as `[1]` means the cell finished successfully.
+- A spinning circle means the cell is running. Wait for it to complete.
+- The word **Pending** means the cell is waiting for the environment to be ready. If it stays Pending for more than a few seconds, select **Restart** at the top of the notebook, then run the cell again.
+
+>[!tip] If you see a message that the output is truncated, select **scrollable element** to view all of it. This is normal when a cell prints a lot of text.
+
+>[!Alert] These notebooks make live calls to shared Cohere model deployments. Run cells one at a time and read the output as you go. If you ever see a "too many requests" message, wait a few seconds and run that cell again.
+
+>[!tip] **Free resources between notebooks.** Each notebook runs in its own kernel that keeps models, data, and connections in memory. When you finish a notebook-or before re-running one from the top-clear its resources: select **Restart** at the top of the notebook to reset the kernel, and use **Clear All Outputs** if you want a clean slate. This frees memory on the VM and prevents leftover state from carrying between runs.
+
+
+##Let's get started!##

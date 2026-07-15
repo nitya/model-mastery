@@ -1,0 +1,13 @@
+## Lab 2, Notebook 2c: Re-sort results (rerank)
+
+**Goal:** improve a list of results by re-sorting it against a more detailed query.
+
+>[!note] Reminder: before you start, **Restart** the kernel of the previous notebook to free its resources.
+
+1. [] Open **`lab-2c-rerank-getting-started.ipynb`** from the **lab-2-cohere-capabilities** folder.
+2. [] Run the first rerank example on a plain-text list.
+3. [] Run the multilingual, numeric, and time-based examples.
+
+>[!Knowledge] **Rerank** reads your query and each candidate together, so it catches relevance that a plain similarity search misses, including hard cases involving other languages, numbers, dates, and negation ("not a red-eye"). Use it as the final sharpening step after a first search.
+
+**What to notice:** the most relevant result rises to the top after reranking, even when it did not start there.

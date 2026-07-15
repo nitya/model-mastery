@@ -1,0 +1,13 @@
+## Lab 1, Notebook 05: Red-team the concierge (OPTIONAL)
+
+**Goal:** test whether the concierge can be tricked into unsafe behavior.
+
+>[!note] Reminder: before you start, **Restart** the kernel of the previous notebook to free its resources.
+
+1. [] Open **`05-local-redteam.ipynb`**.
+2. [] Run the cell that wraps the concierge as a target for the scan.
+3. [] Run the scan, then review the findings.
+
+>[!Knowledge] A **red-team scan** sends adversarial prompts that try to make the agent break its rules, like a mystery shopper testing a help desk. The scan runs on your machine against your local concierge, and you review the findings right in the notebook.
+
+**Lab 1 complete.** You built a Cohere-powered concierge, traced it, evaluated it across four rounds, and tested its safety.

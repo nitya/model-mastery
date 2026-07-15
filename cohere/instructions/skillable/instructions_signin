@@ -1,0 +1,25 @@
+# Sign in to the Virtual Machine
+
+1. [] Sign in to the VM with the following credentials:
+	
+  **Username**: +++@lab.VirtualMachine(Windows11).Username+++  
+  **Password**: +++@lab.VirtualMachine(Windows11).Password+++
+
+	>[!tip] Select the keyboard symbol next to the text to type it into the VM.
+
+# Open the project in Visual Studio Code
+
+You'll do all of your work in **Visual Studio Code** (VS Code), the editor on
+the desktop.
+
+1. [] On the desktop, select the **Visual Studio Code** icon to open it.
+1. [] Confirm the file explorer on the left shows the **Cohere** project, with folders named **lab-1-foundry-maf** and **lab-2-cohere-capabilities**.
+
+    ![di4lbyfn.png](images/di4lbyfn.png)
+
+	>[!Hint] If VS Code opens but does not show those folders, open the project folder manually:
+    - Select **File** then **Open Folder**.
+    - Go to `C:\LabFiles\model-mastery\cohere` and select **Select Folder**.
+    - If asked whether you trust the authors, choose **Yes, I trust the authors**.
+
+	>[!Knowledge] The project contains two lab folders. You'll open notebooks from inside these folders during the workshop. Keep VS Code open for the duration of the lab.

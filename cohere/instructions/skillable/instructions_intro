@@ -1,0 +1,12 @@
+# Welcome to **Build AI Agents with Cohere in Microsoft Foundry (Model Mastery)**
+
+In this workshop you'll use **Cohere** models running on **Microsoft Foundry** to build and explore a real AI application.
+
+You'll work through two labs:
+
+- **Lab 1: Build a travel concierge.** You'll assemble a team of AI agents that plan a business trip, then make them observable, measurable, and safe.
+- **Lab 2: Explore Cohere capabilities.** You'll see how different Cohere models solve different problems: searching by meaning, searching images, and re-sorting results.
+
+>[!Knowledge] An **agent** is a program that uses an AI model to decide what to do and which tools to call, rather than following a fixed script. A **model** is the AI itself; Foundry is where the models are hosted.
+
+The next few pages get you set up: sign in to the lab computer, open the project, and learn how to run a notebook. Then you'll start Workshop 1.

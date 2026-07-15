@@ -1,0 +1,12 @@
+## Lab 2, Notebook 2a: Search by meaning (embeddings)
+
+**Goal:** turn text into embeddings and measure how close two pieces of text are in meaning.
+
+>[!note] Reminder: before you start, **Restart** the kernel of the previous notebook to free its resources.
+
+1. [] Open **`lab-2a-embed.ipynb`** from the **lab-2-cohere-capabilities** folder.
+2. [] Run the quick test cell to confirm the connection.
+3. [] Run the cells that embed several texts and compare their similarity.
+4. [] Run the multilingual cells and notice the same idea in different languages scores as similar.
+
+>[!Knowledge] This is the foundation of **semantic search**: because similar meanings get encoded as vectors that sit close together in the vector space, you can find relevant content even when it uses different words than your query.

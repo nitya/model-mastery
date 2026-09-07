@@ -71,7 +71,7 @@ AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd env get-values | grep -E '^AGEN
 ```bash
 cd "$WORKSHOP_SRC"
 AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd ai agent invoke \
-  "Draft a one-sentence launch headline for the Contoso TrailPack and cite the brief line that supports it."
+  "Draft a one-sentence launch headline for the HikeMate TrailLite Daypack and cite the brief line that supports it."
 ```
 
 Note there is no `--local` this time — this call goes to the deployed agent in Foundry. `azd ai agent invoke` manages the session for you; add `--new-session` if you want a clean slate.

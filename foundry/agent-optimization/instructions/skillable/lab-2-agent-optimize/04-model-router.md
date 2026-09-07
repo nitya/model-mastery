@@ -73,7 +73,7 @@ Model Router.
 
     ```powershell
     $env:AZURE_DEV_USER_AGENT = 'microsoft_foundry_skill'
-    azd ai agent invoke "Write one social caption for the sample product launch. Maximum 20 words."
+    azd ai agent invoke "Write one social caption for the TrailLite Daypack. Maximum 20 words."
     Remove-Item Env:\AZURE_DEV_USER_AGENT
     ```
 
@@ -81,7 +81,7 @@ Model Router.
 
     ```powershell
     $env:AZURE_DEV_USER_AGENT = 'microsoft_foundry_skill'
-    azd ai agent invoke "Write coordinated copy for social, email, and LinkedIn for the sample product launch. Each channel needs a different call to action."
+    azd ai agent invoke "Write coordinated copy for social, email, and LinkedIn for the TrailLite Daypack. Each channel needs a different call to action and evidence citations."
     Remove-Item Env:\AZURE_DEV_USER_AGENT
     ```
 
@@ -89,7 +89,7 @@ Model Router.
 
     ```powershell
     $env:AZURE_DEV_USER_AGENT = 'microsoft_foundry_skill'
-    azd ai agent invoke "Write LinkedIn copy for facilities managers. Plain factual tone. Maximum 90 words. Include the required disclaimer verbatim. Make no claim the product evidence does not support. End with a specific call to action."
+    azd ai agent invoke "Audit TrailLite Daypack copy that claims full waterproofing, 30 L capacity, recycled construction, independent certification, market superiority, and lifetime durability. Correct every unsupported claim, preserve E4's light-rain limitation, and end with compliant LinkedIn copy for weekend hikers."
     Remove-Item Env:\AZURE_DEV_USER_AGENT
     ```
 

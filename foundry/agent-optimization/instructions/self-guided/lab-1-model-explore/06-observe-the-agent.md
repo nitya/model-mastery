@@ -28,7 +28,7 @@ Turn the agent from a black box into something you can inspect: which role ran, 
 ```bash
 cd "$WORKSHOP_SRC"
 AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd ai agent invoke --new-session \
-  "Produce the full TrailPack launch kit: headline, 60-word paragraph, three social posts, and a hero image prompt. Cite the brief line behind every factual claim."
+  "Produce the full TrailLite Daypack launch kit: headline, 60-word paragraph, three social posts, and a hero image prompt. Cite the brief line behind every product-record/manual claim and label visual observations separately."
 ```
 
 Use `--new-session` so this conversation is easy to find.

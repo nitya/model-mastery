@@ -88,14 +88,14 @@ the copywriter onto Model Router by changing one environment variable, with no c
 
     +++Get-Content .\data\campaign-brief.md+++
 
-    **Expected result:** a short brief naming the product, the launch window, the target channels,
-    and the compliance constraints.
+    **Expected result:** a short brief naming the HikeMate TrailLite Daypack, the
+    target channels, the five evidence entries, and the compliance constraints.
 
 1. [] Invoke the locally running agent:
 
     ```powershell
     $env:AZURE_DEV_USER_AGENT = 'microsoft_foundry_skill'
-    azd ai agent invoke --local "Run the campaign brief in data/campaign-brief.md against the product image in assets/contoso-trailpack.svg. Return the full campaign package."
+    azd ai agent invoke --local "Run the campaign brief in data/campaign-brief.md against the product image in assets/traillite-daypack.png. Keep image observations separate from product-record/manual evidence and return the full campaign package."
     Remove-Item Env:\AZURE_DEV_USER_AGENT
     ```
 
@@ -111,14 +111,15 @@ the copywriter onto Model Router by changing one environment variable, with no c
 ### Step 4 — Follow the evidence (3 minutes)
 
 1. [] In the response, find the **product evidence** section produced by the Product Analyst. Pick
-   one concrete detail, for example the fabric front panel.
+   one concrete manual-backed detail, for example the adjustable shoulder straps in E3.
 
 1. [] Find that same detail reused in the **copy** for at least one channel.
 
     **Expected result:** the copy references features that appear in the evidence, and nothing else.
 
-1. [] Scan the copy for any claim the photo cannot support — battery life, speed, durability,
-   awards, or price. Note anything you find.
+1. [] Scan the copy for any claim the photo cannot support — dimensions, weight,
+   catalog price, water resistance, hydration compatibility, material,
+   durability, warranty, or capacity. Note anything you find.
 
     **Expected result:** in the baseline you should find few or none, but the copy may still be
     generic or off-brief. That gap is what you will measure in module 03.

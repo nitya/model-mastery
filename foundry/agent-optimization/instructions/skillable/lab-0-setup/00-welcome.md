@@ -25,9 +25,11 @@ By the end of this page you can:
 
 ## The scenario: Product Launch Studio
 
-A small business hands you a **product photo** and a **campaign brief**. Your application has to
-produce a launch package: what the product visibly is, who it is for, the copy for each channel, and
-a promotional image — without inventing a single claim the photo does not support.
+The workshop supplies the MIT-licensed **HikeMate TrailLite Daypack** photo and
+an evidence ledger derived from its product record and manual. Your application
+has to produce a launch package: what is visibly observable, who the product is
+for, channel copy, and a promotional image — without confusing visual
+observations with manual-backed claims.
 
 Four AI roles collaborate, plus one image tool:
 

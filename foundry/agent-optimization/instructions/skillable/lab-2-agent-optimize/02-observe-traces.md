@@ -29,7 +29,7 @@ By the end of this module you can:
     ```powershell
     Set-Location 'C:\LabFiles\model-mastery\foundry\agent-optimization\src'
     $env:AZURE_DEV_USER_AGENT = 'microsoft_foundry_skill'
-    azd ai agent invoke "Write LinkedIn copy for the sample product launch. Audience: facilities managers. Tone: plain and factual. Maximum 90 words. Include the required disclaimer. Make no claims the product evidence does not support."
+    azd ai agent invoke "Write LinkedIn copy for the TrailLite Daypack. Audience: weekend hikers. Tone: plain and factual. Maximum 90 words. Cite every product-record/manual claim, keep water-resistant distinct from waterproof, and make no unsupported claim."
     Remove-Item Env:\AZURE_DEV_USER_AGENT
     ```
 

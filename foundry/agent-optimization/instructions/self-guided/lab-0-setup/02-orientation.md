@@ -30,7 +30,15 @@ head -40 data/campaign-brief.md
 ls assets/
 ```
 
-This brief is the **entire universe of true statements** for the campaign. Contoso is launching the **TrailPack**, a synthetic workshop product. Five approved evidence lines — **E1 through E5** — carry the only facts anyone may use, each with permitted wording and required qualifiers ("tested sample", "about", "planned"). The claim rules are explicit: no waterproofing, no carbon neutrality, no medical benefit, no lifetime durability, no independent certification, no superiority, and never an invented review, award, or competitor comparison.
+This brief is the **entire universe of approved campaign claims** for the
+**HikeMate TrailLite Daypack**. Its product record, manual, and photograph come
+from the MIT-licensed `Azure-Samples/contoso-web` sample; exact provenance is in
+`assets/PROVENANCE.md`. Five approved evidence lines — **E1 through E5** —
+cover identity/use/catalog price, dimensions/weight, carrying features,
+qualified water resistance, and hydration compatibility/reflective accents.
+The claim rules are explicit: no fully waterproof claim, numeric capacity,
+recycled/carbon-neutral claim, lifetime durability, independent certification,
+or market superiority.
 
 If a claim is not in the brief, the agent may not make it — not "should avoid," may not. That single constraint is what turns a copywriting toy into something you can evaluate.
 
@@ -114,7 +122,9 @@ Notice what Module 08 does *not* require: no code edit, no new agent version, no
 
 You can answer these three questions without looking:
 
-1. What may the copywriter say about the textile? *Only E3's permitted wording — 62% recycled polyester by mass, as a component fact, never as a whole-product claim.*
+1. What may the copywriter say about rain protection? *Only E4's qualified
+   wording: water-resistant for light rain and splashes, not waterproof; do not
+   submerge it or expose it to heavy rain without cover or protection.*
 2. Which deployment changes in Lab 2, and which stay fixed? *`adaptive-copy` changes; the other four are fixed.*
 3. What would invalidate your Module 07 baseline? *Editing the dataset or the rubric.*
 

@@ -54,8 +54,8 @@ Keep the relative `../images/` prefix — module files live one folder below thi
 | # | File name | Capture instructions | Alt text |
 |--:|---|---|---|
 | 7 | `lab1-playground-deployment-picker.png` | The Foundry playground with the deployment picker open, showing the purpose-based deployment names. Blur the project breadcrumb. | `Foundry playground deployment picker listing the purpose-based model deployments` |
-| 8 | `lab1-visual-understanding-response.png` | The playground after the grounding prompt, showing a factual feature inventory that uses `not visible` for unsupported details. Include the attached product image thumbnail. | `Playground response listing only visually verifiable product details, marking unknown attributes as not visible` |
-| 9 | `lab1-creative-image-result.png` | The generated hero image beside its prompt. Crop to the image plus the prompt box. | `Generated product hero image beside the prompt used to create it` |
+| 8 | `lab1-visual-understanding-response.png` | The playground after the grounding prompt, with the TrailLite Daypack PNG thumbnail and a visible-only inventory: green color, shoulder straps, buckles, front/side storage areas, bottle in a side pocket, and trail setting. The response must mark dimensions, weight, price, weather protection, hydration compatibility, material, durability, warranty, capacity, and whether the bottle is included as not visually established. | `TrailLite Daypack image and response separating visible backpack features from facts the photograph cannot establish` |
+| 9 | `lab1-creative-image-result.png` | The generated green daypack hero image beside its prompt. Crop to the image plus the prompt box; ensure no numeric capacity or waterproof claim appears. | `Generated green daypack hero image beside its evidence-safe prompt` |
 
 ## Lab 2 — Agent Optimize
 
@@ -63,7 +63,7 @@ Keep the relative `../images/` prefix — module files live one folder below thi
 |--:|---|---|---|
 | 10 | `lab2-copywriter-instructions.png` | `.agent_configs/baseline/instructions.md` open in VS Code, scrolled to the channel and claim-constraint rules. Crop to the editor pane. | `Campaign Copywriter instructions in VS Code showing channel rules and the ban on unsupported claims` |
 | 11 | `lab2-agent-run-local.png` | Terminal after `azd ai agent run --no-client`, showing the agent listening on `localhost:8088`. | `Terminal showing the local agent started and listening on localhost port 8088` |
-| 12 | `lab2-local-invoke-response.png` | The local invocation response, cropped to show the product evidence section and the start of the channel copy. | `Local invocation response showing grounded product evidence followed by channel copy` |
+| 12 | `lab2-local-invoke-response.png` | The local invocation response, cropped to show TrailLite Daypack product-record/manual evidence separately from visible image observations and the start of the channel copy. | `Local invocation response separating TrailLite Daypack source evidence from image observations before the channel copy` |
 | 13 | `lab2-copywriter-edit.png` | The VS Code editor with the added call-to-action rule visible and the file saved (no dirty dot). Highlight the added lines. | `Copywriter instructions in VS Code with the new call-to-action rule added` |
 | 14 | `lab2-azd-deploy-success.png` | `azd deploy product-launch-studio` output ending in success, with the new version visible. Blur the resource group and endpoint. | `azd deploy output reporting a successfully registered new agent version` |
 | 15 | `lab2-cloud-invoke-response.png` | The cloud invocation response, cropped so the explicit call to action at the end of a channel variant is legible. | `Cloud invocation response ending each channel variant with an explicit call to action` |

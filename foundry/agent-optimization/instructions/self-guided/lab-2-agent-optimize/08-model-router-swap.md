@@ -86,10 +86,10 @@ cd "$WORKSHOP_SRC"
 cat data/router-complexity-cases.jsonl
 
 AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd ai agent invoke --new-session \
-  "Write one social post for the Contoso TrailPack. Cite the brief line behind every claim."
+  "Write one social post for the HikeMate TrailLite Daypack. Cite the brief line behind every product-record/manual claim."
 
 AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd ai agent invoke \
-  "Write a launch narrative that reconciles the TrailPack's durability claims with the warranty terms, flags every claim the brief does not support, and proposes compliant alternatives."
+  "Write a launch narrative that distinguishes the TrailLite Daypack's water resistance from waterproofing, flags unsupported capacity and lifetime-durability claims, and proposes compliant alternatives."
 ```
 
 One easy request, one hard one. Then look at the traces from [Module 06](../lab-1-model-explore/06-observe-the-agent.md): the model attribute on the `adaptive-copy` spans is where routing becomes visible.

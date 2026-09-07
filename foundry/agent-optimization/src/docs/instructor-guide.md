@@ -44,14 +44,16 @@ availability is not proof of quota, protocol support, or Marketplace acceptance.
 
 Ask learners to locate:
 
-- a valid qualified numerical claim;
+- a valid numerical claim, such as dimensions or weight;
 - an unsupported claim that the agent corrected;
 - a visual inference the agent refused to make;
-- a planned date/price kept separate from verified characteristics;
+- the $60 catalog price kept separate from visual observations;
 - a router choice whose cost/latency trade-off they can explain.
 
-The product, organization, dates, price, evidence identifiers, and image are
-synthetic. Do not introduce real customer data.
+The product record, manual, and image come from the MIT-licensed
+`Azure-Samples/contoso-web` sample at the commit recorded in
+`assets/PROVENANCE.md`; the campaign output remains a workshop exercise. Do not
+introduce real customer data.
 
 ## Prepared checkpoint policy
 

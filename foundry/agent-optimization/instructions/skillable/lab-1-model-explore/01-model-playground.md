@@ -57,15 +57,17 @@ By the end of this module you can:
 1. [] Select the **`visual-understanding`** deployment.
 
 1. [] Attach the sample product image from the VM:
-   `C:\LabFiles\model-mastery\foundry\agent-optimization\src\assets\contoso-trailpack.svg`
+   `C:\LabFiles\model-mastery\foundry\agent-optimization\src\assets\traillite-daypack.png`
 
 1. [] Send this starter prompt:
 
     ```text
-    You are a product analyst. Describe ONLY what is visually verifiable in this image:
-    form factor, materials, colours, visible controls, ports, and any legible text.
-    Do not infer battery life, price, performance, durability, or brand reputation.
-    If a detail is not visible, write "not visible".
+    You are a product analyst. Describe ONLY what is visually verifiable in this
+    image: green color, shoulder straps, buckles, front and side storage areas, a
+    bottle visible in a side pocket, and the trail setting. Do not say the bottle
+    is included. Do not infer dimensions, weight, price, water resistance,
+    hydration compatibility, material, durability, warranty, or capacity.
+    If a requested detail is not visible, write "not visible".
     ```
 
     **Expected result:** a factual inventory of visible features, with `not visible` used for
@@ -75,14 +77,15 @@ By the end of this module you can:
 
 1. [] **Experiment:** send a follow-up that tries to pull the model off its grounding.
 
-    +++How long does this product's battery last, and is it waterproof?+++
+    +++What is its exact capacity and weight, is it fully waterproof, and is the visible bottle included?+++
 
-    **Expected result:** the model refuses to guess and says the image does not show it.
+    **Expected result:** the model refuses to guess any of those facts and does
+    not treat the visible bottle as evidence that an accessory is included.
 
 >[!Knowledge] This is **grounding**: answering only from supplied evidence. It is the single most
 important behaviour in this scenario, because every marketing claim downstream is built on the
-Product Analyst's output. A model that invents "48-hour battery life" here poisons the entire
-campaign package.
+Product Analyst's output. A model that invents a numeric capacity or upgrades a
+visual trail setting into a waterproofing claim poisons the entire campaign package.
 
 	>[!note] If your lab region backs `visual-understanding` with GPT-5.4 rather than Claude-Sonnet-6,
     everything above still works. Note any difference you see in how carefully each one hedges.
@@ -96,8 +99,12 @@ campaign package.
     ```text
     Using only these verified product facts, propose a launch strategy.
 
-    Facts: compact matte-black desk device, single USB-C port, one physical dial,
-    fabric-wrapped front panel, no visible branding.
+    Facts: the HikeMate TrailLite Daypack is a hiking backpack with a catalog
+    price of $60 [E1]. It measures 20 in x 12 in x 6 in and weighs 1.5 lbs [E2].
+    It has adjustable shoulder straps, a padded back panel, and multiple pockets
+    and compartments [E3]. It is water-resistant for light rain and splashes but
+    is not waterproof [E4]. It is hydration-system compatible and has reflective
+    accents [E5].
 
     Return: primary audience, secondary audience, positioning statement,
     three proof points, and two claims we must NOT make.
@@ -147,9 +154,9 @@ write marginally better questions. **Fit beats raw capability.**
 1. [] Send this starter prompt:
 
     ```text
-    A clean product hero shot: compact matte-black desk device with a fabric-wrapped
-    front panel and a single physical dial, on a light neutral desk, soft daylight,
-    shallow depth of field, no text, no logos.
+    A clean product hero shot: green day-hiking backpack with visible shoulder
+    straps, buckles, and front and side storage areas on a trail, soft daylight,
+    shallow depth of field, no text, no logos, no numeric capacity claim.
     ```
 
     **Expected result:** a promotional-style image consistent with the described product.

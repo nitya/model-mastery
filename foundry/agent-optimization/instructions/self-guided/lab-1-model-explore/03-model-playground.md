@@ -50,7 +50,7 @@ cat data/campaign-brief.md
 Paste the campaign brief, then this prompt:
 
 ```text
-You are the campaign coordinator for the Contoso TrailPack launch.
+You are the campaign coordinator for the HikeMate TrailLite Daypack launch.
 Using ONLY the brief above, produce a launch plan as a table with columns:
 deliverable | channel | evidence IDs it can rely on | qualifier it must preserve.
 Include exactly 5 deliverables and respect the channel constraints.
@@ -71,19 +71,25 @@ cd "$WORKSHOP_SRC"
 ls assets/
 ```
 
-Upload `assets/contoso-trailpack.svg`. If the playground rejects SVG uploads, either convert it to PNG first (`rsvg-convert assets/contoso-trailpack.svg -o trailpack.png`, or any converter) or paste the SVG source as text — the exercise still works.
+Upload `assets/traillite-daypack.png`.
 
 ```text
-Here is the Contoso TrailPack product image and the campaign brief.
+Here is the HikeMate TrailLite Daypack product image and the campaign brief.
 Produce two sections:
 "Visible in the image" — features you can actually see.
-"Supported by evidence E1-E5" — facts from the brief, with their evidence ID.
+"Supported by product-record/manual evidence E1-E5" — facts from the brief,
+with their evidence ID.
 Then list attributes a copywriter is likely to WANT but that NEITHER source
-supports. Remember: an image cannot establish material composition, capacity,
-durability, weather resistance, or weight. Do not guess. Do not fill gaps.
+supports. The image may show only green color, shoulder straps, buckles,
+front/side storage areas, a bottle in a side pocket, and a trail setting.
+Do not say the bottle is included. An image cannot establish dimensions,
+weight, price, water resistance, hydration compatibility, material, durability,
+warranty, or capacity. Do not guess. Do not fill gaps.
 ```
 
-Claim rule 7 is the whole test here: a model that infers "22 L capacity" or "water-resistant" from a picture has just fabricated evidence.
+Claim rule 7 is the whole test here: a model that infers a numeric capacity or
+water resistance from the picture has fabricated evidence. Those claims may
+come only from the manual-backed ledger.
 
 > 🔁 **Vision fallback.** If `visual-understanding` is unavailable in your region, or the partner-model Marketplace terms are not accepted for your subscription, repeat this round against **`campaign-reasoning` (GPT-5.4)**, which is also vision-capable. Note in your comparison which model you actually used — the fallback is a legitimate result, not a failure.
 
@@ -99,23 +105,28 @@ VERDICT (supported / unsupported / partially supported) + the evidence ID that
 supports it, or "no supporting evidence". Do not rewrite the copy.
 
 DRAFT:
-1. The tested preproduction zipper completed 20,000 fixture cycles.
+1. The HikeMate TrailLite Daypack is a hiking backpack with a catalog price of $60.
 2. Fully waterproof, so your gear stays dry in any storm.
-3. Made from recycled materials — a carbon-neutral pack for a greener trail.
-4. Independently certified as the most durable 22 L pack on the market.
-5. Planned at $129, planned for October 15, 2026.
+3. A recycled, carbon-neutral pack for a greener trail.
+4. Independently certified as the market's most durable 30 L pack.
+5. Water-resistant for light rain and splashes, but not waterproof.
 ```
 
-Sentences 2, 3, and 4 are traps: an explicitly forbidden weather claim, a component fact inflated into a whole-product environmental claim, and an invented certification plus a competitor comparison. Sentences 1 and 5 are clean and must be marked supported — over-refusal is also a failure. Run the **same** prompt on both deployments and compare. This is the single most instructive comparison in the workshop; it is exactly the judgement the studio has to make on every launch.
+Sentences 2, 3, and 4 are traps: an explicitly forbidden weather claim, an
+unsupported environmental claim, and invented certification, superiority, and
+capacity. Sentences 1 and 5 are supported by E1 and E4 and must be accepted —
+over-refusal is also a failure. Run the **same** prompt on both deployments and
+compare.
 
 ### Step 5 — Round D · Hero image (3 min)
 
 **Deployment: `creative-image` (MAI-Image-2.5)**
 
 ```text
-A photorealistic product hero shot of a modern 22-litre day-hiking backpack on a
-granite ledge at sunrise, alpine valley behind, soft rim light, shallow depth
-of field, no text, no logos, no readable branding, 16:9.
+A photorealistic product hero shot of a green day-hiking backpack with visible
+shoulder straps, buckles, front and side storage areas, on a granite trail at
+sunrise, alpine valley behind, soft rim light, shallow depth of field, no text,
+no logos, no readable branding, 16:9.
 ```
 
 Notice what the prompt *forbids*: text, logos, readable branding. Generated text and marks are a common source of unsupported claims sneaking into a launch kit through the back door.

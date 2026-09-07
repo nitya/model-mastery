@@ -1,7 +1,7 @@
 {
-  "product_name": "TrailGlow Bottle",
+  "product_name": "TrailLite Daypack",
   "audience": "weekend hikers",
-  "objective": "Introduce the bottle with an evidence-grounded social launch",
+  "objective": "Introduce the daypack with an evidence-grounded hiking launch",
   "channels": [
     "social",
     "email"
@@ -9,12 +9,24 @@
   "request_image": true,
   "evidence": [
     {
-      "statement": "The bottle is made from 90% recycled stainless steel by weight.",
-      "source": "approved product specification v3"
+      "statement": "The HikeMate TrailLite Daypack is a hiking backpack with a catalog price of $60.",
+      "source": "E1: product record and manual"
     },
     {
-      "statement": "A fully charged cap provides up to 8 hours of light in the lab test.",
-      "source": "approved lab report LT-104"
+      "statement": "The TrailLite Daypack measures 20 in x 12 in x 6 in and weighs 1.5 lbs.",
+      "source": "E2: product manual"
+    },
+    {
+      "statement": "Multiple pockets and compartments support organization; the shoulder straps are adjustable and the back panel is padded.",
+      "source": "E3: product manual"
+    },
+    {
+      "statement": "The daypack is water-resistant for light rain and splashes, but not waterproof; use protection in heavy rain and do not submerge.",
+      "source": "E4: product manual"
+    },
+    {
+      "statement": "The daypack is hydration-system compatible and has reflective accents.",
+      "source": "E5: product manual"
     }
   ]
 }

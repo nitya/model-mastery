@@ -43,7 +43,14 @@ The three steps you take are deliberately different **kinds** of steps:
 
 ## 2. The scenario: Product Launch Studio
 
-Contoso is launching the **TrailPack**, a synthetic 22 L day-hiking backpack. Marketing needs launch copy fast, and legal needs it to be *defensible*. The agent's hard constraint: **every measurable claim must carry an evidence ID (E1–E5) and keep its qualifier.** No waterproofing, no carbon neutrality, no invented certification, no "most durable on the market."
+The workshop launches the **HikeMate TrailLite Daypack**, sourced from the
+MIT-licensed `Azure-Samples/contoso-web` sample. Marketing needs launch copy
+fast, and legal needs it to be *defensible*. The agent's hard constraint:
+**every product-record/manual claim must carry an evidence ID (E1–E5) and keep
+its qualifier.** In particular, “water-resistant for light rain and splashes”
+must never become “waterproof.” Numeric capacity, recycled/carbon-neutral,
+independent-certification, market-superiority, and lifetime-durability claims
+are unsupported traps.
 
 The agent runs **four roles plus one image tool**, in order:
 
@@ -57,7 +64,14 @@ The agent runs **four roles plus one image tool**, in order:
 
 ⭐ The copywriter is your **optimization target**. It is the only component you change in Lab 2 — first its model (via deployment config), then its instructions (via Agent Optimizer).
 
-**Grounded evidence** lives in [`src/data/campaign-brief.md`](./src/data/campaign-brief.md) and [`src/assets/`](./src/assets/). The orchestration hands the original, immutable evidence ledger to every role rather than trusting a role to copy it forward.
+**Grounded evidence** lives in [`src/data/campaign-brief.md`](./src/data/campaign-brief.md).
+The exact 1024×1024 product photograph is
+[`src/assets/traillite-daypack.png`](./src/assets/traillite-daypack.png);
+its upstream commit, product record, manual, and MIT license are documented in
+[`src/assets/PROVENANCE.md`](./src/assets/PROVENANCE.md). Product-record/manual
+claims and visible image observations are intentionally separate. The
+orchestration hands the original, immutable evidence ledger to every role
+rather than trusting a role to copy it forward.
 
 **Unsupported-claim prevention** works at two levels: a deterministic **claim guard** checks every copy item before release, and the evaluation rubric in [`src/data/evaluators/campaign-quality.yaml`](./src/data/evaluators/campaign-quality.yaml) caps the score at 2 for any fabricated fact or unsupported comparative, durability, health, environmental, or waterproof claim.
 

@@ -90,6 +90,7 @@ Set it **inline only**. Never commit it to `azure.yaml`, `.env`, or `azd env set
 | [`../../sample.env`](../../sample.env) | Every variable the workshop reads; you copy it to `.env` |
 | [`../../src/scripts/`](../../src/scripts/) | `preflight.sh`, `configure-environment.sh`, `provision.sh`, `switch-router.sh`, `cleanup.sh` |
 | [`../../src/data/`](../../src/data/) | Campaign brief, `eval-cases.jsonl`, `router-complexity-cases.jsonl`, evaluator rubric, `eval.yaml` |
+| [`../../src/assets/`](../../src/assets/) | TrailLite Daypack PNG plus exact upstream provenance and MIT license |
 | [`../../src/agents/product-launch-studio/`](../../src/agents/product-launch-studio/) | Agent source, `.agent_configs/baseline/`, tests |
 | [`../../src/infra/`](../../src/infra/) | Bicep templates used by `azd provision` |
 

@@ -125,8 +125,10 @@ development setting, not configuration.
       Select-Object -ExpandProperty FullName
     ```
 
-    **Expected result:** from `$WorkshopSrc`, the listing includes `assets\contoso-trailpack.svg`,
-    `data\campaign-brief.md`, `data\eval-cases.jsonl`,
+    **Expected result:** from `$WorkshopSrc`, the listing includes
+    `assets\traillite-daypack.png`, `assets\PROVENANCE.md`,
+    `assets\contoso-web-MIT-LICENSE.md`, `data\campaign-brief.md`,
+    `data\eval-cases.jsonl`,
     `data\evaluators\campaign-quality.yaml`, and
     `checkpoints\00-baseline`, `checkpoints\01-evidence-optimized`,
     `checkpoints\optimizer-result.sample.json`, and files under `checkpoints\evaluation`.

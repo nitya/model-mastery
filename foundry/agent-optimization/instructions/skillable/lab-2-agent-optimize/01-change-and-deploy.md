@@ -78,7 +78,7 @@ before-and-after comparison honest — the old version still exists exactly as i
     ```powershell
     Set-Location 'C:\LabFiles\model-mastery\foundry\agent-optimization\src'
     $env:AZURE_DEV_USER_AGENT = 'microsoft_foundry_skill'
-    azd ai agent invoke --local "Write the social caption and the email copy for the sample product launch. Use the campaign brief in data/campaign-brief.md."
+    azd ai agent invoke --local "Write the social caption and email copy for the TrailLite Daypack. Use only E1-E5 in data/campaign-brief.md and preserve every qualifier."
     Remove-Item Env:\AZURE_DEV_USER_AGENT
     ```
 
@@ -129,7 +129,7 @@ deployment costs minutes, and in a 90-minute workshop minutes are the scarce res
 
     ```powershell
     $env:AZURE_DEV_USER_AGENT = 'microsoft_foundry_skill'
-    azd ai agent invoke "Write the social caption and the LinkedIn post for the sample product launch."
+    azd ai agent invoke "Write the social caption and the LinkedIn post for the TrailLite Daypack using only E1-E5."
     Remove-Item Env:\AZURE_DEV_USER_AGENT
     ```
 

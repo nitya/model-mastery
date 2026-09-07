@@ -1,41 +1,57 @@
-# Contoso TrailPack campaign brief
+# HikeMate TrailLite Daypack campaign brief
 
-This is a synthetic product and campaign. The supplied SVG is original workshop
-artwork and can be reused under the repository's license.
+The product record, manual, and supplied photograph come from the MIT-licensed
+[`Azure-Samples/contoso-web`](https://github.com/Azure-Samples/contoso-web)
+sample at commit `e13b0d346bdc0f2139552df6b9268cbe71b5b644`.
+See [`../assets/PROVENANCE.md`](../assets/PROVENANCE.md) for exact source paths,
+license, and attribution.
 
 ## Audience and objective
 
 - Audience: urban professionals, ages 25–44, who take casual day hikes.
-- Objective: drive qualified visits to a fictional preorder page.
+- Objective: create evidence-grounded launch copy for this sample catalog product.
 - Voice: practical, optimistic, specific, and never alarmist.
 - Deliverables: launch concept, three channel adaptations, image direction,
   evidence table, and a final claim-risk review.
 
 ## Approved evidence
 
-| Evidence ID | Approved fact | Permitted wording |
+| Evidence ID | Source evidence | Approved wording |
 | --- | --- | --- |
-| E1 | Laboratory fixture test completed 20,000 zipper cycles on the tested preproduction sample. | “The tested preproduction zipper completed 20,000 fixture cycles.” |
-| E2 | Measured empty mass of the tested preproduction sample was 780 g ± 20 g. | “The tested sample weighs about 780 g.” |
-| E3 | Main textile contains 62% recycled polyester by mass, based on supplier certificate SC-1042. | “The main textile contains 62% recycled polyester by mass.” |
-| E4 | Internal measured volume is 22 L ± 0.5 L. | “22 L capacity.” |
-| E5 | Suggested retail price for this exercise is USD 129; launch date is fictional: 15 October 2026. | “Planned at $129” and “planned for October 15, 2026,” each labeled as plans. |
+| E1 | Product record/manual: product `TrailLite Daypack`; brand `HikeMate`; category `Backpacks`; best use `Hiking`; price `60.0`. | “The HikeMate TrailLite Daypack is a hiking backpack with a catalog price of $60.” |
+| E2 | Manual technical specs: dimensions `20in x 12in x 6in`; weight `1.5 lbs`. | “The TrailLite Daypack measures 20 in × 12 in × 6 in and weighs 1.5 lbs.” |
+| E3 | Manual features/specs: multiple pockets and compartments, adjustable shoulder straps, and a padded back panel. | “Multiple pockets and compartments support organization; the shoulder straps are adjustable and the back panel is padded.” |
+| E4 | Manual features and caution: water-resistant against light rain and splashes, but not fully waterproof; do not submerge it or expose it to heavy rain without a rain cover or waterproofing protection. | “Water-resistant for light rain and splashes, but not waterproof; use protection in heavy rain and do not submerge.” |
+| E5 | Manual features/specs: hydration-system compatibility and reflective accents. | “Hydration-system compatible, with reflective accents.” |
+
+The ledger intentionally excludes broad marketing language and does not assign a
+numeric capacity. The source describes a spacious main compartment, but supplies
+no capacity measurement.
+
+## Visually observable in the supplied image
+
+The image can support only these observations: a green daypack, shoulder straps,
+buckles, front and side storage areas, a bottle visible in a side pocket, and a
+trail setting. The bottle's presence does **not** mean a water bottle is included.
+These observations are image evidence, not product-record/manual evidence.
 
 ## Claim rules
 
-1. Attach an evidence ID to every measurable product claim.
-2. Preserve qualifiers such as “tested sample,” “about,” and “planned.”
-3. Do not turn a component fact into a whole-product claim.
-4. Do not claim waterproofing, carbon neutrality, medical benefit, lifetime
-   durability, independent certification, or superiority; no evidence supports
-   those claims.
+1. Attach an evidence ID to every product-record/manual claim.
+2. Preserve qualifiers, especially “catalog price,” “water-resistant for light
+   rain and splashes,” and “not waterproof.”
+3. Keep product-record/manual evidence separate from visual observations.
+4. Do not claim full waterproofing, a numeric capacity, recycled or
+   carbon-neutral construction, independent certification, market superiority,
+   or lifetime durability; no selected evidence supports those claims.
 5. Never invent reviews, customers, awards, test organizations, URLs, discounts,
    stock status, or competitor comparisons.
 6. If the user asks for an unsupported claim, clearly decline that claim and
    offer evidence-safe wording.
-7. Image analysis may describe visible features only. It cannot establish
-   material composition, capacity, durability, weather resistance, or weight.
-8. Label all product, company, date, and price details as synthetic workshop data.
+7. Image analysis may describe only the observations listed above. It cannot
+   establish dimensions, weight, price, water resistance, hydration
+   compatibility, material, durability, warranty, or capacity.
+8. Do not claim that the visible bottle or any other accessory is included.
 
 ## Channel constraints
 

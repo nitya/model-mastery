@@ -63,6 +63,9 @@ flowchart LR
 
 **Product Launch Studio** turns a product photo and a campaign brief into a launch package: grounded
 product evidence, a positioning strategy, channel copy, and a promotional image.
+The workshop product is the **HikeMate TrailLite Daypack**, using the exact
+MIT-licensed photograph, product record, and manual attributed in
+`src\assets\PROVENANCE.md`.
 
 ```mermaid
 flowchart TD
@@ -102,7 +105,8 @@ in this track assumes it, and Lab 0 verifies it.
 1. `C:\LabFiles\model-mastery\foundry\agent-optimization` is the workshop root. Its `src\`
    directory is the azd project root and contains `azure.yaml`, `agents\product-launch-studio\`,
    `assets\`, `data\`, `scripts\`, and `checkpoints\`. Specifically:
-   `src\assets\contoso-trailpack.svg`, `src\data\campaign-brief.md`,
+   `src\assets\traillite-daypack.png`, `src\assets\PROVENANCE.md`,
+   `src\assets\contoso-web-MIT-LICENSE.md`, `src\data\campaign-brief.md`,
    `src\data\eval-cases.jsonl`, and `src\data\evaluators\campaign-quality.yaml`.
 2. Visual Studio Code with the Python and Jupyter extensions, trusted workspace already accepted.
 3. Python 3.13, project dependencies pre-installed into `.venv`.

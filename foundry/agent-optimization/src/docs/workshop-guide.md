@@ -89,7 +89,7 @@ In a second terminal:
 
 ```bash
 azd ai agent invoke --local \
-  "Write a hero for TrailPack using only claims in the campaign brief."
+  "Write a hero for TrailLite Daypack using only claims in the campaign brief."
 ```
 
 When the local invocation succeeds, review the deployment, then run:
@@ -97,7 +97,7 @@ When the local invocation succeeds, review the deployment, then run:
 ```bash
 azd deploy product-launch-studio --no-prompt
 azd ai agent show --output json
-azd ai agent invoke "Give me one evidence-safe TrailPack slogan."
+azd ai agent invoke "Give me one evidence-safe TrailLite Daypack slogan."
 ```
 
 Remote calls incur usage. One smoke test is sufficient.

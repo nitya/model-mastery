@@ -64,6 +64,9 @@ those four words distinct on purpose — most agent bugs are really deployment o
 
 1. [] Read the loop you will run in Lab 2.
 
+    This loop is **AgentOps**: the practice of observing, evaluating, improving,
+    and versioning an agent after it is working.
+
     ```mermaid
     flowchart LR
         B["Baseline<br/>fixed model"] --> O["Observe<br/>traces"]

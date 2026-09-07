@@ -29,7 +29,7 @@ the part of the agent that writes the campaign copy.
 [Inspect image provenance](./src/assets/PROVENANCE.md) ·
 [Open the evaluation rubric](./src/data/evaluators/campaign-quality.yaml)
 
-### How one request becomes a launch kit
+### Agent architecture: how one request becomes a launch kit
 
 Think of the studio as a relay team. Each specialist adds one piece, then passes
 the same evidence forward.
@@ -45,8 +45,23 @@ flowchart LR
     G --> H["8 · Launch kit"]
 ```
 
-Foundry captures traces across the run. We use those traces, the fixed dataset,
-and the same evaluation rubric to understand what happened.
+### Where AgentOps fits
+
+**AgentOps** is how we operate and improve an agent after it works the first
+time. It is not another box inside the agent. It is the feedback loop around the
+whole run:
+
+```mermaid
+flowchart LR
+    A["Run the agent"] --> B["Observe<br/>traces + latency"]
+    B --> C["Evaluate<br/>quality + grounding"]
+    C --> D["Improve<br/>one target"]
+    D --> E["Compare<br/>and choose a version"]
+```
+
+Then we repeat. Foundry gives us the traces, evaluations, and versions that make
+each decision visible instead of relying on a feeling that the agent seems
+better.
 
 ### Our optimization target
 

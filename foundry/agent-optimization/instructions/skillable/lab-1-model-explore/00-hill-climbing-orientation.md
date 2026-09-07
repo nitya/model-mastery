@@ -11,8 +11,8 @@ Product Launch Studio is, and what makes an improvement believable.
 
 By the end of this module you can:
 
-- Distinguish model, model deployment, agent, tool, agent version, trace, evaluation, Model Router,
-  and Agent Optimizer.
+- Distinguish model, model deployment, agent, tool, agent version, trace, evaluation, AgentOps,
+  Model Router, and Agent Optimizer.
 - Map each capability in the scenario to the component that provides it.
 - State the four rules of a controlled improvement loop.
 
@@ -22,7 +22,7 @@ By the end of this module you can:
 
 ## Instructions
 
-### Step 1 — Learn the nine words
+### Step 1 — Learn the ten words
 
 1. [] Read the table. Each of these appears in a later module, and mixing two of them up is the most
    common source of confusion in agent work.
@@ -36,6 +36,7 @@ By the end of this module you can:
     | **Agent version** | An immutable snapshot of deployed agent code and configuration | Lab 2, module 01 |
     | **Trace** | The recorded timeline of one request: spans, model calls, tool calls, latency | Lab 2, module 02 |
     | **Evaluation** | Scoring many recorded outputs against a fixed dataset and rubric | Lab 2, module 03 |
+    | **AgentOps** | The repeatable practice of observing, evaluating, improving, and versioning a working agent | Throughout Lab 2 |
     | **Model Router** | A deployment that picks an underlying model per request | Lab 2, module 04 |
     | **Agent Optimizer** | A service that proposes and scores improved agent instructions | Lab 2, module 05 |
 
@@ -60,9 +61,10 @@ evaluation tells you whether your fix actually worked.
 	>[!Hint] It does not reason, delegate, or hold a conversation. It takes approved evidence and
     strategy in, and returns an image. That is a function call, so it is modelled as a tool.
 
-### Step 3 — Learn the loop
+### Step 3 — Use hill climbing for AgentOps
 
-1. [] Read the loop you will execute three times in Lab 2.
+1. [] Read the AgentOps loop you will use in Lab 2. Hill climbing keeps it
+   honest: change one lever, measure again, and keep only improvements.
 
     ```mermaid
     flowchart LR

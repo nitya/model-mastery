@@ -77,7 +77,12 @@ Two details matter more than they look:
 
 ### Step 3 — Learn the hill
 
-You cannot see the summit. You can only measure your **altitude** and take a **step**.
+**AgentOps** is the routine around a working agent: observe what happened,
+evaluate the results, improve one target, and compare versions. In this
+workshop, we use hill climbing to make that routine controlled and repeatable.
+
+You cannot see the summit. You can only measure your **altitude** and take a
+**step**.
 
 ```mermaid
 flowchart LR

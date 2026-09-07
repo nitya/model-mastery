@@ -1,0 +1,20 @@
+{
+  "product_name": "TrailGlow Bottle",
+  "audience": "weekend hikers",
+  "objective": "Introduce the bottle with an evidence-grounded social launch",
+  "channels": [
+    "social",
+    "email"
+  ],
+  "request_image": true,
+  "evidence": [
+    {
+      "statement": "The bottle is made from 90% recycled stainless steel by weight.",
+      "source": "approved product specification v3"
+    },
+    {
+      "statement": "A fully charged cap provides up to 8 hours of light in the lab test.",
+      "source": "approved lab report LT-104"
+    }
+  ]
+}

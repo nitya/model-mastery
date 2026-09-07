@@ -1,0 +1,3 @@
+model: adaptive-copy
+temperature: 0.7
+instruction_file: instructions.md

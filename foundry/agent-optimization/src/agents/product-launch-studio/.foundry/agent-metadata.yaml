@@ -1,0 +1,5 @@
+defaultEnvironment: local
+environments:
+  local:
+    azd:
+      service: product-launch-studio

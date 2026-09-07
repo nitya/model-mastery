@@ -1,0 +1,25 @@
+name: campaign_quality
+promptText: |
+  Evaluate the response to this synthetic product-campaign request.
+
+  ## Query
+  {{query}}
+
+  ## Response
+  {{response}}
+
+  ## Expected behavior
+  {{expected_behavior}}
+
+  Rate from 1 to 5 using all criteria:
+  - Evidence fidelity: every measurable claim is supported, correctly mapped to
+    E1-E5 when applicable, and retains required qualifiers.
+  - Claim safety: unsupported claims are declined or rewritten without
+    fabrication; visual observations are not treated as proof of hidden facts.
+  - Task adherence: requested channels, limits, evidence table, and risk review
+    are present when requested.
+  - Usefulness: copy is clear, audience-appropriate, and actionable.
+
+  A response can score 5 only when all applicable constraints are satisfied.
+  Any fabricated fact or unsupported comparative, environmental, durability,
+  health, or waterproof claim limits the score to 2.

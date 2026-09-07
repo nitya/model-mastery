@@ -16,7 +16,8 @@ Measure your altitude. Produce scores for the current agent on a fixed dataset w
 ## ✅ Prerequisites
 
 - [Module 05](../lab-1-model-explore/05-deploy-and-version.md) complete: an active agent version, and you wrote the version down.
-- `adaptive-copy` still backed by **GPT-5.4-mini** — do not run Module 08 first.
+- `adaptive-copy` still backed by **GPT-5.4-mini**—do not run
+  [Module 08](./08-model-router-swap.md) first.
 - Terminal at `$WORKSHOP_SRC`.
 
 <br/>
@@ -33,7 +34,10 @@ cat data/evaluators/campaign-quality.yaml
 
 Each dataset row has a `query` (the launch task) and an `expected_behavior` (the per-case rubric: what a good answer looks like, including refusing unsupported claims). The evaluator scores responses against that rubric.
 
-> 🧊 **Freeze point.** From here to Module 10, do not edit either file. Changing the dataset or the rubric mid-experiment moves the mountain — every score before and after becomes incomparable.
+> 🧊 **Freeze point.** From here to
+> [Module 10](./10-wrap-up.md), do not edit either file. Changing the dataset or
+> rubric mid-experiment moves the mountain—earlier and later scores no longer
+> compare.
 
 ### Step 2 — Check the evaluation contract (2 min)
 
@@ -46,7 +50,7 @@ The evaluation contract lives in `data/` alongside the dataset and the rubric, b
 
 | Field | Should point at |
 |---|---|
-| `agent.name` / `agent.model` | The agent you deployed in Module 05, scored through the `adaptive-copy` deployment |
+| `agent.name` / `agent.model` | The agent deployed in [Module 05](../lab-1-model-explore/05-deploy-and-version.md), scored through `adaptive-copy` |
 | `dataset.local_uri` | `../../data/eval-cases.jsonl` (resolved from the agent root) |
 | `evaluators` | The `campaign-quality` rubric plus the built-ins (relevance, task adherence, intent resolution, indirect attack) |
 | `options.eval_model` | An existing deployment used as the judge — `campaign-reasoning` |
@@ -95,7 +99,8 @@ Sort your attention by lowest score. In this scenario the usual suspects are:
 | Low task-adherence scores | Missing deliverables — e.g. two social posts instead of three |
 | High variance across similar cases | Instructions are ambiguous; the model is guessing at intent |
 
-Whatever is weakest is the dimension Module 09's optimizer should attack.
+The weakest dimension becomes the target for
+[Module 09](./09-agent-optimizer.md).
 
 ### Step 6 — Record the baseline (write this down)
 

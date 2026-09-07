@@ -4,8 +4,9 @@
 
 ## Goal
 
-Make one small, measurable change to the Campaign Copywriter, test it locally, deploy it to
-Microsoft Foundry as a new immutable agent version, and invoke that version in the cloud.
+Make one small, measurable change to the Campaign Copywriter, test it locally,
+deploy it to Microsoft Foundry as a fixed agent version, and invoke that version
+in the cloud.
 
 ## Learning objectives
 
@@ -18,8 +19,9 @@ By the end of this module you can:
 
 ## Prerequisites
 
-- Lab 2 module 00 complete: a successful local invocation.
-- The local agent from module 00 is **stopped**.
+- [Lab 2, module 00](./00-run-agent-locally.md) complete: a successful local
+  invocation.
+- The local agent from [module 00](./00-run-agent-locally.md) is **stopped**.
 
 ## Instructions
 
@@ -59,7 +61,8 @@ before-and-after comparison honest — the old version still exists exactly as i
 1. [] Save the file.
 
 	>[!Alert] Change **only** this. Do not adjust the model, the temperature, or another role. The
-    entire point of module 06 is being able to attribute a score change to a specific edit.
+    entire point of [module 06](./06-compare-and-wrap-up.md) is being able to
+    attribute a score change to a specific edit.
 
 <!-- SCREENSHOT: ../images/lab2-copywriter-edit.png -->
 
@@ -109,8 +112,9 @@ deployment costs minutes, and in a 90-minute workshop minutes are the scarce res
     `azd provision` in this workshop — infrastructure is pre-provisioned and your lab account cannot
     create resources.
 
-	>[!note] Only the files the agent needs are uploaded. `.agentignore` in the agent folder excludes
-    tooling, secrets, and local artifacts from the deployment package.
+	>[!note] Only the files the agent needs are uploaded. `.agentignore` in the
+    agent folder excludes tooling, secrets, and local results from the
+    deployment package.
 
 ### Step 5 — Confirm and invoke the new version (1 minute)
 
@@ -146,7 +150,7 @@ call-to-action rule and is live, answering cloud invocations with the new behavi
 ## Quick win
 
 You changed one line, deployed it, and saw the behaviour change in the cloud — the shortest possible
-demonstration of the deploy-and-version half of the Agent DevOps loop.
+demonstration of the deploy-and-version part of our AgentOps workflow.
 
 ## Checkpoint and recovery
 

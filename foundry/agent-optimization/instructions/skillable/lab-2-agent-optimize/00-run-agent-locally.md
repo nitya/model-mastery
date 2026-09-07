@@ -18,7 +18,8 @@ By the end of this module you can:
 
 ## Prerequisites
 
-- Lab 0 complete: preflight `READY`, both CLIs signed in.
+- [Lab 0](../lab-0-setup/02-verify-predeployed-environment.md) complete:
+  preflight `READY`, both CLIs signed in.
 - VS Code open at `C:\LabFiles\model-mastery\foundry\agent-optimization`, with the terminal at
   `$WorkshopSrc` (`...\agent-optimization\src`).
 
@@ -32,7 +33,7 @@ By the end of this module you can:
     |---|---|
     | `main.py` | Entry point; exposes the hosted-agent protocol |
     | `product_launch_studio\config.py` | Reads deployment names from environment variables |
-    | `product_launch_studio\orchestration.py` | Coordinator logic and role handoffs |
+    | `product_launch_studio\orchestration.py` | Coordination logic and role handoffs |
     | `product_launch_studio\instructions.py` | Instructions for non-optimized roles |
     | `product_launch_studio\image_tool.py` | The image generation tool abstraction |
     | `.agent_configs\baseline\` | The baseline configuration Agent Optimizer compares against |
@@ -47,13 +48,15 @@ By the end of this module you can:
 
 <!-- SCREENSHOT: ../images/lab2-copywriter-instructions.png -->
 
-	>[!note] Remember where this file is. You will edit it in module 01 and Agent Optimizer will
-    rewrite it in module 05.
+    >[!note] Remember where this file is. We’ll edit it in
+    [module 01](./01-change-and-deploy.md), and Agent Optimizer will rewrite it in
+    [module 05](./05-agent-optimizer.md).
 
 1. [] Open `agents\product-launch-studio\product_launch_studio\config.py` and confirm it reads
    deployment names and `COPYWRITER_DEPLOYMENT_MODE` from environment variables.
 
->[!Knowledge] Every role reads a **purpose-based deployment name**. That is why module 04 can move
+>[!Knowledge] Every role reads a **purpose-based deployment name**. That is why
+[module 04](./04-model-router.md) can move
 the copywriter onto Model Router by changing one environment variable, with no code edit at all.
 
 ### Step 2 — Start the agent locally (3 minutes)
@@ -122,7 +125,8 @@ the copywriter onto Model Router by changing one environment variable, with no c
    durability, warranty, or capacity. Note anything you find.
 
     **Expected result:** in the baseline you should find few or none, but the copy may still be
-    generic or off-brief. That gap is what you will measure in module 03.
+    generic or off-brief. That gap is what we’ll measure in
+    [module 03](./03-batch-evaluation.md).
 
 >[!Knowledge] This is **evidence propagation**: a fact is established once, by the role that can
 verify it, and every downstream role is constrained to it. When an agent hallucinates a marketing
@@ -177,5 +181,6 @@ The checkpoint is instructor-authored guidance, not a complete source snapshot.
 
 ## Transition
 
-The agent works locally. Next you will change one line of the copywriter's instructions, deploy it
-to Microsoft Foundry as a new immutable version, and see the change take effect in the cloud.
+The agent works locally. Next, we’ll change one line of the copywriter’s
+instructions, deploy it to Microsoft Foundry as a new fixed version, and see the
+change take effect in the cloud.

@@ -18,10 +18,11 @@ By the end of this module you can:
 
 ## Prerequisites
 
-- Lab 2 module 04 complete: `COPYWRITER_DEPLOYMENT_MODE` is `routed`,
-  `ADAPTIVE_COPY_MODEL_NAME` identifies Model Router, and the existing agent is using the remapped
-  `adaptive-copy` deployment.
-- Lab 2 module 03 complete: `eval.yaml` is confirmed and the dataset and rubric are frozen.
+- [Lab 2, module 04](./04-model-router.md) complete:
+  `COPYWRITER_DEPLOYMENT_MODE` is `routed`, and `adaptive-copy` points to Model
+  Router.
+- [Lab 2, module 03](./03-batch-evaluation.md) complete: `eval.yaml` is
+  confirmed, and the dataset and rubric are fixed.
 
 >[!Alert] **Never auto-apply a candidate.** In this module you inspect candidates first, then apply
 one explicitly with `azd ai agent optimize apply --candidate`, then read the diff, and only then
@@ -29,7 +30,7 @@ deploy. Do not use `azd ai agent optimize deploy` — it collapses those review 
 
 ## Instructions
 
-### Step 1 — Understand what will be optimized (1 minute)
+### Step 1 — Confirm the optimization target (30 seconds)
 
 1. [] Confirm the baseline configuration Agent Optimizer compares against exists:
 
@@ -53,7 +54,10 @@ deploy. Do not use `azd ai agent optimize deploy` — it collapses those review 
 
     **Expected result:** `model: adaptive-copy`.
 
-1. [] Note the optimization surface for this lab: **the Campaign Copywriter instructions only.**
+### Step 2 — See what Agent Optimizer will do (30 seconds)
+
+1. [] Confirm the only thing we are changing is the **Campaign Copywriter
+   instructions**.
 
 ```mermaid
 flowchart LR
@@ -69,12 +73,12 @@ flowchart LR
     A --> D["azd deploy<br/>after review"]
 ```
 
->[!Knowledge] Agent Optimizer generates candidate instruction variants, runs them against the **same
-dataset and rubric** in `eval.yaml`, and returns scores. It is your hill-climbing loop automated —
-which is precisely why the human review gate matters. Automating the search does not mean automating
-the decision.
+>[!Knowledge] Agent Optimizer proposes instruction variants and scores them
+against the **same dataset and rubric** in `eval.yaml`. It automates the search
+inside one AgentOps step; we still decide whether that step advances our hill
+climb.
 
-### Step 2 — Start the optimization run (1 minute)
+### Step 3 — Start the optimization run (1 minute)
 
 1. [] Start the run from the `src` azd project root, naming an optimizer-eligible deployment:
 
@@ -98,10 +102,10 @@ the decision.
     ```
 
 	>[!Alert] **An optimizer run usually takes longer than this module.** That is expected and
-    planned for. Leave the run going and continue with Step 3 using the prepared example. Add
+    planned for. Leave the run going and continue with Step 4 using the prepared example. Add
     `--watch` only if your class is running ahead of schedule.
 
-### Step 3 — Review the instructor-prepared example (2 minutes)
+### Step 4 — Review the instructor-prepared example (2 minutes)
 
 1. [] Open the prepared optimizer-result shape and review guide:
 
@@ -132,11 +136,11 @@ the decision.
     point on usefulness while losing evidence fidelity is a bad trade in this scenario, because
     grounding is the constraint the whole business case rests on.
 
->[!Knowledge] This is the difference between an optimizer and an oracle. It searches instruction
-space against your rubric. If your rubric under-weights something you care about, the top candidate
-will faithfully optimize the wrong thing. **You** own the rubric, and therefore the decision.
+>[!Knowledge] Agent Optimizer is a search tool, not a decision maker. If our
+rubric gives too little weight to something important, the top candidate may
+improve the wrong behavior. We own the rubric and the final decision.
 
-### Step 4 — Apply a candidate locally and review the diff (1 minute)
+### Step 5 — Apply a candidate locally and review the diff (1 minute)
 
 1. [] If your live run has completed, apply a candidate from **your live operation** — this writes
    local files only:
@@ -208,10 +212,10 @@ still-running job from `src`: `azd ai agent optimize cancel <operation-id>`.
 |---|---|
 | `OPTIMIZER_MODEL_DEPLOYMENT` is empty | Run `azd env get-values` and use the optimizer deployment name it lists. If none is present, tell your instructor. |
 | The optimizer rejects the model | Only specific models are eligible as optimizer models. Use the deployment your instructor provisioned for this purpose. |
-| The run stays queued | Expected under class load. Continue with the prepared example review; check back in module 06. |
+| The run stays queued | Expected under class load. Continue with the prepared example review; check back in [module 06](./06-compare-and-wrap-up.md). |
 | `apply` reports no changes | Use only a candidate ID printed for your live operation. Prepared checkpoint identifiers are never valid live candidate IDs. |
 | The diff is larger than expected | Read all of it before deploying. If it touches a role other than the copywriter, reject it — this lab optimizes one surface only. |
-| Deployment after apply fails | Do not substitute the prepared example as a live result. Keep the routed configuration, record the failure, and use the module 06 example only to practise comparison. |
+| Deployment after apply fails | Do not substitute the prepared example as a live result. Keep the routed configuration, record the failure, and use the [module 06](./06-compare-and-wrap-up.md) example only to practise comparison. |
 
 ## Transition
 

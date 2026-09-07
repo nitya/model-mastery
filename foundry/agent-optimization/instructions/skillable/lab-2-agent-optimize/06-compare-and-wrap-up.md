@@ -13,12 +13,13 @@ By the end of this module you can:
 
 - Compare three agent versions on one frozen dataset and rubric.
 - Attribute each score change to the single lever that caused it.
-- Describe the Agent DevOps loop end to end.
+- Describe the AgentOps workflow end to end.
 - Name the next lever you would pull and how you would prove it worked.
 
 ## Prerequisites
 
-- Lab 2 module 05 complete: **v-optimized** deployed, or the prepared example reviewed and labelled.
+- [Lab 2, module 05](./05-agent-optimizer.md) complete: **v-optimized**
+  deployed, or the prepared example reviewed and labelled.
 - Baseline and router scores recorded.
 
 ## Instructions
@@ -107,11 +108,11 @@ change earned it — and no way to undo the half that hurt.
 
 ## What you learned
 
-- **Lab 0** — you verified a pre-provisioned Foundry project, its purpose-based deployments, and a
+- **[Lab 0](../lab-0-setup/00-welcome.md)** — you verified a pre-provisioned Foundry project, its purpose-based deployments, and a
   running hosted agent, and read a green preflight report.
-- **Lab 1** — you compared four models on the tasks they were chosen for and built a
+- **[Lab 1](../lab-1-model-explore/00-hill-climbing-orientation.md)** — you compared four models on the tasks they were chosen for and built a
   capability-to-task selection table from your own observations.
-- **Lab 2** — you ran a four-role agent locally, deployed an immutable version, read a trace, scored
+- **[Lab 2](./00-run-agent-locally.md)** — you ran a four-role agent locally, deployed a fixed version, read a trace, scored
   a baseline, and improved it twice with one lever at a time.
 
 **Ideas worth keeping:**
@@ -119,7 +120,7 @@ change earned it — and no way to undo the half that hurt.
 | Idea | Why it matters |
 |---|---|
 | Purpose-based deployment names | Swap models without touching code |
-| Immutable agent versions | Before-and-after comparison stays honest |
+| Fixed agent versions | Before-and-after comparison stays honest |
 | Traces tell you where, evaluations tell you whether | Two different questions, two different tools |
 | Frozen dataset and rubric | The only way scores stay comparable |
 | One lever at a time | The only way a gain is attributable |
@@ -132,8 +133,8 @@ decision with evidence.
 
 ## Quick win
 
-A finished before-and-after scorecard and your own explanation of the Agent DevOps loop — the two
-artifacts you can take straight back to your team.
+A finished before-and-after scorecard and your own explanation of the AgentOps
+workflow—two results you can take straight back to your team.
 
 ## Checkpoint and recovery
 
@@ -154,7 +155,7 @@ examples in `checkpoints\evaluation\`. Use them only to practise the comparison 
 |---|---|
 | The optimized run scores below the router run | A legitimate outcome. The right decision is not to promote it. Record why. |
 | One of the three runs is missing | Use the matching `*.example.json` file in `checkpoints\evaluation\` and mark the row **prepared example**. |
-| Scores differ noticeably between class members | Expected. Judge models are non-deterministic and class load varies. Compare **direction and size** of change, not absolute values. |
+| Scores differ noticeably between class members | Expected. Judge-model scores can vary, and class load changes over time. Compare the **direction and size** of change, not absolute values. |
 | You need the original fixed mapping for a rerun | Restart the disposable Skillable lab or ask the instructor to restore its initial azd environment. The router script intentionally has no fixed-mode switch. |
 
 ## Transition

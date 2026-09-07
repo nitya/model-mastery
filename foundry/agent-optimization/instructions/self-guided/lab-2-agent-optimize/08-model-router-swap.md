@@ -8,7 +8,8 @@ Change **which model** writes the copy without changing the agent, the deploymen
 
 ## Objectives
 
-- Remap the existing `adaptive-copy` deployment from fixed GPT-5.4-mini to Model Router.
+- Switch the model behind the existing `adaptive-copy` deployment from fixed
+  GPT-5.4-mini to Model Router.
 - Confirm that no new agent version was created.
 - Compare router behaviour on deliberately mixed-complexity cases.
 - Treat routing as a hypothesis to measure, never as a promised improvement.
@@ -104,7 +105,9 @@ AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd ai agent eval run
 AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd ai agent eval show -O router-results.json
 ```
 
-That run takes longer than this module's budget. **Start it now and continue to Module 09** — you will read the numbers in Module 10.
+That run takes longer than this module’s budget. **Start it now and continue to
+[Module 09](./09-agent-optimizer.md).** We’ll read the numbers in
+[Module 10](./10-wrap-up.md).
 
 **Reference comparison** — the shape of a router result, from a prior instructor run. Not a prediction, and not a target:
 
@@ -122,13 +125,18 @@ The decision rule that matters: **an efficiency change only counts if quality ho
 ## 📤 Expected result
 
 - `adaptive-copy` now resolves to the Model Router entry; the other four deployments are untouched.
-- `AGENT_..._VERSION` is identical to Module 05.
+- `AGENT_..._VERSION` is identical to
+  [Module 05](../lab-1-model-explore/05-deploy-and-version.md).
 - Two invocations succeeded with no code change whatsoever.
 - A re-evaluation is running (or queued) against the frozen dataset and rubric.
 
 ## 🏆 Quick win
 
-Put the Module 01 deployment table next to the one from Step 3. One row changed. No redeploy, no new version, no code diff — and the agent is now using a different model-selection strategy in production. That is what naming deployments after jobs buys you.
+Put the deployment table from
+[Module 01](../lab-0-setup/01-provision-environment.md) next to the one from
+Step 3. One row changed. No redeploy, new version, or code diff—and the agent
+now uses a different model-selection strategy. That is the value of naming
+deployments after jobs.
 
 ## 🧭 Checkpoint and recovery
 
@@ -138,7 +146,7 @@ Put the Module 01 deployment table next to the one from Step 3. One row changed.
 |---|---|
 | Model Router is unavailable in your region | Stop at Step 2 (`--preview`) and use the reference comparison table. The lesson — config-level change, same deployment name — is fully intact. |
 | You are over budget | Skip Step 4 and go to [Module 09](./09-agent-optimizer.md); the eval from Step 5 keeps running. |
-| Quality drops and you want to revert | See Module 10's revert recipe: reset the four `ADAPTIVE_COPY_MODEL_*` values and re-provision. |
+| Quality drops and you want to revert | Use the [Module 10 revert recipe](./10-wrap-up.md): reset the four `ADAPTIVE_COPY_MODEL_*` values and re-provision. |
 | The swap fails midway | Re-run `--apply`; provisioning is idempotent. |
 
 ## 🔧 Troubleshooting

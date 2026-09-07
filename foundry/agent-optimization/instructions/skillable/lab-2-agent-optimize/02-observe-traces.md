@@ -18,7 +18,8 @@ By the end of this module you can:
 
 ## Prerequisites
 
-- Lab 2 module 01 complete: version **v-cta** deployed and invoked in the cloud.
+- [Lab 2, module 01](./01-change-and-deploy.md) complete: version **v-cta**
+  deployed and invoked in the cloud.
 
 ## Instructions
 
@@ -96,7 +97,8 @@ attaches latency and token usage to each one. Use the log to notice, the trace t
     - Input tokens
     - Output tokens
 
-	>[!tip] Paste these into your scratch file next to your baseline notes. Module 04 compares the
+	>[!tip] Paste these into your scratch file next to your baseline notes.
+	[Module 04](./04-model-router.md) compares the
     same span after you switch the copywriter to Model Router.
 
 ### Step 4 — Find one optimization opportunity (2 minutes)

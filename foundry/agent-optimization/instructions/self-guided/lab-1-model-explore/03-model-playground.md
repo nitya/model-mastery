@@ -9,7 +9,7 @@ Run the same launch work against four different models, see where each one is ge
 ## Objectives
 
 - Open your project's playground and select a specific deployment.
-- Compare a fast model and a frontier model on planning and on claim review.
+- Compare a fast model and a larger reasoning model on planning and claim review.
 - Use a vision-capable model to ground copy in the product sheet, with a documented fallback.
 - Generate a hero image with a purpose-built image model.
 - Record a comparison you can defend — model choice is optimization lever #1.
@@ -148,7 +148,7 @@ Fill this in for yourself — it is the evidence behind every role assignment in
 ## 📤 Expected result
 
 - Four deployments exercised, each on the task its role actually performs.
-- A concrete difference you observed on Round C between the mini model and the frontier model on unsupported claims.
+- A concrete difference you observed on Round C between the mini model and the larger reasoning model on unsupported claims.
 - One generated hero image.
 - A filled-in comparison table.
 
@@ -158,7 +158,8 @@ Round C, run twice, side by side. In under four minutes you have a defensible an
 
 ## 🧭 Checkpoint and recovery
 
-**The one thing that must be true:** you can name one task where the frontier model was clearly better and one where the fast model was good enough.
+**The one thing that must be true:** you can name one task where the larger
+reasoning model was clearly better and one where the fast model was good enough.
 
 | If… | Do this |
 |---|---|

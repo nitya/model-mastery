@@ -11,12 +11,14 @@ Turn the agent from a black box into something you can inspect: which role ran, 
 - Stream logs for a live agent session.
 - Find your agent's traces in Application Insights.
 - Read one conversation end to end and attribute spans to roles.
-- Capture the latency and token numbers that make Lab 2's comparison meaningful.
+- Capture the latency and token numbers that make
+  [Lab 2](../lab-2-agent-optimize/README.md) meaningful.
 
 ## ✅ Prerequisites
 
 - [Module 05](./05-deploy-and-version.md) complete: an active agent version.
-- At least one invocation already sent (Module 05, Step 5).
+- At least one invocation sent in
+  [Module 05](./05-deploy-and-version.md), Step 5.
 - `ENABLE_MONITORING=true` was set during provisioning, so Application Insights exists.
 
 <br/>
@@ -69,7 +71,9 @@ Answer these four questions from the trace:
 
 ### Step 5 — Record the "before" picture (1 min)
 
-Fill this in. It is qualitative on purpose — Module 07 supplies the numbers, this supplies the shape.
+Fill this in. It is qualitative on purpose:
+[Module 07](../lab-2-agent-optimize/07-baseline-evaluation.md) supplies the
+numbers; this table supplies the shape.
 
 | Observation | Your value |
 |---|---|
@@ -98,7 +102,7 @@ Point at the span that used `adaptive-copy` and say: *"that one span is the only
 |---|---|
 | Traces have not appeared yet | Telemetry ingestion lags by a minute or two. Re-run Step 1, wait, refresh. |
 | Application Insights is missing | `ENABLE_MONITORING` was false. Set it in `$WORKSHOP_ROOT/.env`, then from `$WORKSHOP_SRC` re-run `./scripts/configure-environment.sh --env-file ../.env --apply` and `./scripts/provision.sh --env-file ../.env --apply`. |
-| You are over budget | `azd ai agent monitor` alone satisfies the checkpoint. Move on — Module 07 does not depend on the portal. |
+| You are over budget | `azd ai agent monitor` alone satisfies the checkpoint. Move on—[Module 07](../lab-2-agent-optimize/07-baseline-evaluation.md) does not depend on the portal. |
 | The portal layout does not match | Expected; Foundry evolves. Search the project for tracing, or query Application Insights directly in the Azure portal. |
 
 ## 🔧 Troubleshooting

@@ -26,10 +26,10 @@ By the end of this page you can:
 ## The scenario: Product Launch Studio
 
 The workshop supplies the MIT-licensed **HikeMate TrailLite Daypack** photo and
-an evidence ledger derived from its product record and manual. Your application
-has to produce a launch package: what is visibly observable, who the product is
-for, channel copy, and a promotional image — without confusing visual
-observations with manual-backed claims.
+an approved evidence list drawn from its product record and manual. Together,
+we’ll produce a launch package: what we can see, who the product is for, channel
+copy, and a promotional image—without presenting a visual observation as a
+documented product fact.
 
 Four AI roles collaborate, plus one image tool:
 
@@ -67,11 +67,12 @@ those four words distinct on purpose — most agent bugs are really deployment o
 
     | Lab | Time | You will produce |
     |---|--:|---|
-    | **Lab 0 — Setup** | 10 min | A verified, ready environment |
-    | **Lab 1 — Model Explore** | 23 min | A capability-to-task selection table |
-    | **Lab 2 — Agent Optimize** | 57 min | A measured before-and-after scorecard |
+    | **[Lab 0 — Setup](./01-sign-in-and-open-project.md)** | 10 min | A verified, ready environment |
+    | **[Lab 1 — Model Explore](../lab-1-model-explore/00-hill-climbing-orientation.md)** | 23 min | A capability-to-task selection table |
+    | **[Lab 2 — Agent Optimize](../lab-2-agent-optimize/00-run-agent-locally.md)** | 57 min | A measured before-and-after scorecard |
 
-1. [] Read the loop you will run in Lab 2.
+1. [] Read the loop we’ll run in
+   [Lab 2](../lab-2-agent-optimize/00-run-agent-locally.md).
 
     The full route from baseline to target is our **hill climb**. At every step,
     we repeat an **AgentOps** workflow: run, observe, evaluate, improve, and

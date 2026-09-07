@@ -71,7 +71,9 @@ AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd provision --preview --no-prompt
 AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd provision --no-prompt
 ```
 
-Reverting a model choice is a configuration change. No redeploy, no new agent version — the same property you verified in Module 08.
+Reverting a model choice is a configuration change. No redeploy or new agent
+version—the same property we verified in
+[Module 08](./08-model-router-swap.md).
 
 ### Step 4 — Clean up (2 min)
 
@@ -123,14 +125,14 @@ Say this sentence out loud, filling in your own values: *"On a frozen 5–8 case
 
 | Skill | Where you practised it |
 |---|---|
-| Provision a Foundry project and a whole model layer from source | Module 01 |
-| Choose models per role from evidence you generated yourself | Module 03 |
+| Provision a Foundry project and a whole model layer from source | [Module 01](../lab-0-setup/01-provision-environment.md) |
+| Choose models per role from evidence you generated yourself | [Module 03](../lab-1-model-explore/03-model-playground.md) |
 | Run, deploy, and version a hosted agent without Docker | Modules 04–05 |
-| Read traces to attribute behaviour to a specific role and model | Module 06 |
-| Baseline an agent on a frozen dataset and rubric | Module 07 |
-| Change the model layer without touching the agent | Module 08 |
-| Use Agent Optimizer as a reviewed proposal engine, not an autopilot | Module 09 |
-| Turn results into a promote / revert decision | Module 10 |
+| Read traces to attribute behaviour to a specific role and model | [Module 06](../lab-1-model-explore/06-observe-the-agent.md) |
+| Baseline an agent on a frozen dataset and rubric | [Module 07](./07-baseline-evaluation.md) |
+| Change the model layer without touching the agent | [Module 08](./08-model-router-swap.md) |
+| Use Agent Optimizer as a reviewed proposal engine, not an autopilot | [Module 09](./09-agent-optimizer.md) |
+| Turn results into a promote/revert decision | [Module 10](./10-wrap-up.md) |
 
 ## ➡️ Next · the next hill
 

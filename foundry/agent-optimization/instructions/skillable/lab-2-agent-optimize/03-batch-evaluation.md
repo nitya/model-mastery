@@ -18,8 +18,10 @@ By the end of this module you can:
 
 ## Prerequisites
 
-- Lab 2 module 01 complete: version **v-cta** deployed.
-- Lab 2 module 02 complete: you have a hypothesis in your scratch file.
+- [Lab 2, module 01](./01-change-and-deploy.md) complete: version **v-cta**
+  deployed.
+- [Lab 2, module 02](./02-observe-traces.md) complete: you have a hypothesis in
+  your scratch file.
 
 ## Instructions
 
@@ -90,8 +92,8 @@ hill-climbing exercise collapses.
 
 <!-- SCREENSHOT: ../images/lab2-eval-yaml.png -->
 
->[!Knowledge] `eval.yaml` is the shared contract between **evaluation** and **optimization**. Module
-05's Agent Optimizer reads this same file, so the candidates it generates are scored on exactly the
+>[!Knowledge] `eval.yaml` keeps **evaluation** and **optimization** aligned.
+[Module 05](./05-agent-optimizer.md) reads this same file, so every candidate is scored on exactly the
 rubric you are about to run. One contract, two consumers.
 
 ### Step 4 — Run the baseline evaluation (4 minutes)
@@ -109,7 +111,8 @@ rubric you are about to run. One contract, two consumers.
 
 <!-- SCREENSHOT: ../images/lab2-eval-run-summary.png -->
 
-	>[!tip] While it runs, re-read your hypothesis from module 02 and predict which criterion will
+	>[!tip] While it runs, re-read your hypothesis from
+	[module 02](./02-observe-traces.md) and predict which criterion will
     score lowest. Predicting before you look is the fastest way to build calibration.
 
 1. [] Create a learner-local results directory and save the run details there:
@@ -138,9 +141,11 @@ rubric you are about to run. One contract, two consumers.
    captions well but drops explicit constraints on the multi-constraint cases."*
 
 >[!Knowledge] That sentence is the bridge to the rest of the workshop. If quality drops as request
-complexity rises, one fixed model is being asked to be both fast and deep. **Module 04 attacks that
+complexity rises, one fixed model is being asked to be both fast and deep.
+**[Module 04](./04-model-router.md) tests that
 with Model Router.** If instead failures are about ignored rules regardless of complexity, the
-instructions are the problem — **module 05 attacks that with Agent Optimizer.**
+instructions are the problem—**[module 05](./05-agent-optimizer.md) tests that
+with Agent Optimizer.**
 
 ## Expected result
 

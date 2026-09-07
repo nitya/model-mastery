@@ -17,6 +17,9 @@
 
 ## If you are short on time
 
-Module 01 is the only module in the workshop you cannot skip — everything after it needs a live project. Module 02 is reading; you can carry it into the break.
+[Module 01](./01-provision-environment.md) is the only module in the workshop
+you cannot skip—everything after it needs a live project.
+[Module 02](./02-orientation.md) is reading, so we can continue while Azure
+finishes provisioning.
 
 ➡️ Start with [Module 01](./01-provision-environment.md) · ⬆️ [Self-guided index](../README.md) · 🏠 [Workshop overview](../../../README.md)

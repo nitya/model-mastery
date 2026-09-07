@@ -24,7 +24,9 @@ Every module has the same shape:
 
 ### The `WORKSHOP_ROOT` convention
 
-The workshop is nested inside a larger repository, so every command anchors to one variable instead of guessing at relative paths. Set it once per terminal (Module 01 makes it permanent):
+The workshop is nested inside a larger repository, so every command anchors to
+one variable instead of guessing at relative paths. Set it once per terminal;
+[Module 01](./lab-0-setup/01-provision-environment.md) makes it permanent:
 
 ```bash
 export WORKSHOP_ROOT=/workspaces/model-mastery/foundry/agent-optimization
@@ -68,7 +70,7 @@ Set it **inline only**. Never commit it to `azure.yaml`, `.env`, or `azd env set
 |---|---|---|---|
 | 03 | [Model playground: pick the right tool](./lab-1-model-explore/03-model-playground.md) | 18 min | A model-to-role comparison you made yourself |
 | 04 | [Run the agent locally](./lab-1-model-explore/04-run-agent-locally.md) | 12 min | The four roles and the image tool running on localhost |
-| 05 | [Deploy and version the agent](./lab-1-model-explore/05-deploy-and-version.md) | 10 min | An immutable agent version in Foundry |
+| 05 | [Deploy and version the agent](./lab-1-model-explore/05-deploy-and-version.md) | 10 min | A fixed, numbered agent version in Foundry |
 | 06 | [Observe what the agent actually did](./lab-1-model-explore/06-observe-the-agent.md) | 8 min | Traces that show which model handled what |
 
 ### Lab 2 — Optimize the agent · 27 min → [lab-2-agent-optimize](./lab-2-agent-optimize/README.md)
@@ -77,7 +79,7 @@ Set it **inline only**. Never commit it to `azure.yaml`, `.env`, or `azd env set
 |---|---|---|---|
 | 07 | [Baseline evaluation](./lab-2-agent-optimize/07-baseline-evaluation.md) | 12 min | A recorded altitude: scores on a fixed dataset and rubric |
 | 08 | [Swap in Model Router](./lab-2-agent-optimize/08-model-router-swap.md) | 5 min | The same deployment name, a different selection strategy |
-| 09 | [Agent Optimizer](./lab-2-agent-optimize/09-agent-optimizer.md) | 5 min | Candidate instructions you reviewed and did not blindly apply |
+| 09 | [Agent Optimizer](./lab-2-agent-optimize/09-agent-optimizer.md) | 5 min | Candidate instructions you reviewed before applying |
 | 10 | [Wrap-up and next steps](./lab-2-agent-optimize/10-wrap-up.md) | 5 min | A promote/revert decision and a clean subscription |
 
 <br/>
@@ -100,6 +102,7 @@ Set it **inline only**. Never commit it to `azure.yaml`, `.env`, or `azd env set
 
 - **Preview features.** Model Router, Agent Optimizer, and the `azd ai agent` command surface are in preview. Command flags and output can change between versions — when something looks different, run `--help` before assuming the workshop is wrong. See the [preview supplemental terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 - **Portal drift.** Foundry's portal changes often, so these modules describe *what to look for* at [ai.azure.com](https://ai.azure.com) rather than exact click paths, and contain no screenshots.
-- **Cost.** You are creating real, billable Azure resources. Module 10 deletes them.
+- **Cost.** You are creating real, billable Azure resources.
+  [Module 10](./lab-2-agent-optimize/10-wrap-up.md) deletes them.
 
 ➡️ Start with **[Module 01 — Provision the workshop environment](./lab-0-setup/01-provision-environment.md)**.

@@ -7,7 +7,7 @@
 | # | Module | Time | Goal |
 |---|---|---|---|
 | 07 | [Baseline evaluation](./07-baseline-evaluation.md) | 12 min | Record your altitude: scores for the fixed `adaptive-copy` baseline |
-| 08 | [Swap in Model Router](./08-model-router-swap.md) | 5 min | Remap the same deployment name to Model Router and compare |
+| 08 | [Swap in Model Router](./08-model-router-swap.md) | 5 min | Switch the model behind the same deployment name and compare |
 | 09 | [Agent Optimizer](./09-agent-optimizer.md) | 5 min | Let the optimizer propose better copywriter instructions — and review them |
 | 10 | [Wrap-up and next steps](./10-wrap-up.md) | 5 min | Make a promote/revert call and clean up |
 

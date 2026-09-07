@@ -18,8 +18,10 @@ By the end of this module you can:
 
 ## Prerequisites
 
-- Lab 0 complete: all deployments verified `Succeeded`.
-- Lab 1 module 00 complete: you know the nine terms.
+- [Lab 0](../lab-0-setup/02-verify-predeployed-environment.md) complete: all
+  deployments verified `Succeeded`.
+- [Lab 1, module 00](./00-hill-climbing-orientation.md) complete: you know the
+  ten terms.
 
 ## Instructions
 
@@ -144,7 +146,7 @@ matters as much as how good it is.
     **Expected result:** the coordinator deployment responds noticeably faster.
 
 >[!Knowledge] The coordinator runs on nearly every turn, so latency and cost compound there. A
-smaller, faster model is often the right choice for orchestration even when a larger model would
+smaller, faster model is often the right choice for coordination even when a larger model would
 write marginally better questions. **Fit beats raw capability.**
 
 ### Step 5 — `creative-image` for image generation (3 minutes)
@@ -167,7 +169,9 @@ write marginally better questions. **Fit beats raw capability.**
    +++Same shot, dark moody studio lighting, deep shadows.+++ — and compare.
 
 >[!Alert] Generated imagery is illustrative, not evidence. Nothing the image model invents may be
-used as a product claim. In Lab 2, image quality is deliberately kept **out** of the scored batch
+used as a product claim. In
+[Lab 2](../lab-2-agent-optimize/03-batch-evaluation.md), image quality is
+deliberately kept **out** of the scored batch
 evaluation so the measurement stays fast and repeatable.
 
 ### Step 6 — Complete your selection table (3 minutes)
@@ -189,7 +193,8 @@ evaluation so the measurement stays fast and repeatable.
     **The copywriter must handle both a one-line caption and a tightly constrained multi-channel
     brief. Would you pick the fast model or the deep one?**
 
-	>[!Hint] Neither is right for both. That is exactly the gap Model Router fills in Lab 2 module 04
+	>[!Hint] Neither is right for both. That is the gap Model Router addresses in
+	[Lab 2, module 04](../lab-2-agent-optimize/04-model-router.md)
     — it chooses per request instead of forcing you to choose once.
 
 ## Expected result
@@ -219,10 +224,12 @@ latency comparison in Step 4. Steps 3 and 5 can be skimmed; the workshop still w
 | `429` or "too many requests" | Deployments are shared across the class. Wait 15 seconds and resend. |
 | The playground shows no deployments | Wrong project. Compare the portal breadcrumb with `AZURE_AI_PROJECT_NAME` from `azd env get-values`. |
 | Image generation takes more than a minute | Normal under class load. Move on to Step 6 and check the result later. |
-| A response contradicts the grounding rule | Note it — this is exactly the failure pattern you will score in Lab 2 module 03. |
+| A response contradicts the grounding rule | Note it—this is the failure pattern we’ll score in [Lab 2, module 03](../lab-2-agent-optimize/03-batch-evaluation.md). |
 
 ## Transition
 
-Lab 1 is complete in 23 minutes. You have chosen models by capability, in isolation. Now you will
-see them working together: Lab 2 starts by running the full Product Launch Studio agent on your own
+[Lab 1](./00-hill-climbing-orientation.md) is complete in 23 minutes. You have
+chosen models by capability, in isolation. Next, we’ll see them working
+together: [Lab 2](../lab-2-agent-optimize/00-run-agent-locally.md) starts by
+running the full Product Launch Studio agent on your own
 machine.

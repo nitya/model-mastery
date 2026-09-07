@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate workshop data and the attributed PNG locally without network access."""
+"""Validate workshop data and visual assets locally without network access."""
 
 import argparse
 import json
@@ -22,6 +22,7 @@ required = [
     root / "data/evaluators/campaign-quality.yaml",
     root / "assets/traillite-daypack.png",
     root / "assets/workshop-banner.svg",
+    root / "assets/agent-architecture.svg",
     root / "assets/PROVENANCE.md",
     root / "assets/contoso-web-MIT-LICENSE.md",
 ]
@@ -84,5 +85,6 @@ if (width, height) != (1024, 1024):
     raise SystemExit(f"{png_path}: expected 1024x1024, found {width}x{height}")
 print(f"[OK] {png_path.relative_to(root)}: valid PNG, {width}x{height}")
 
-ET.parse(root / "assets/workshop-banner.svg")
-print("[OK] assets/workshop-banner.svg: valid XML")
+for svg_name in ("workshop-banner.svg", "agent-architecture.svg"):
+    ET.parse(root / "assets" / svg_name)
+    print(f"[OK] assets/{svg_name}: valid XML")

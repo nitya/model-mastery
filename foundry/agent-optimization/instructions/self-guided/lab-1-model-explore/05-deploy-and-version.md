@@ -4,20 +4,24 @@
 
 ## 🎯 Goal
 
-Publish Product Launch Studio into your Foundry project as an **immutable version**, and understand exactly which kinds of change create a new version and which do not.
+Publish Product Launch Studio to your Foundry project as a fixed, numbered
+version. Foundry calls this an **immutable version**: we create a new version
+instead of editing one that is already deployed.
 
 ## Objectives
 
 - Deploy the agent with `azd deploy` using direct code deployment (no Docker, no ACR).
 - Read back the deployed agent name and version.
 - Smoke-test the deployed endpoint.
-- Predict, before Lab 2, which upcoming change will create a new version — and which will not.
+- Predict, before [Lab 2](../lab-2-agent-optimize/README.md), which upcoming
+  change will create a new version—and which will not.
 
 ## ✅ Prerequisites
 
 - [Module 01](../lab-0-setup/01-provision-environment.md) complete.
 - [Module 04](./04-run-agent-locally.md) attempted (a local run is helpful but not required).
-- Terminal 1 from Module 04 stopped (`Ctrl+C`) so the local run does not hold the session.
+- Terminal 1 from [Module 04](./04-run-agent-locally.md) stopped (`Ctrl+C`) so
+  the local run does not hold the session.
 
 <br/>
 
@@ -58,7 +62,11 @@ AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd ai agent show --output json
 AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd env get-values | grep -E '^AGENT_'
 ```
 
-`azd` writes `AGENT_<SERVICE>_NAME` and `AGENT_<SERVICE>_VERSION` back into your environment. **Write the version down.** Module 07's baseline scores belong to this exact version, and Module 10's decision compares against it.
+`azd` writes `AGENT_<SERVICE>_NAME` and `AGENT_<SERVICE>_VERSION` back into your
+environment. **Write the version down.** The baseline scores in
+[Module 07](../lab-2-agent-optimize/07-baseline-evaluation.md) belong to this
+version, and [Module 10](../lab-2-agent-optimize/10-wrap-up.md) compares against
+it.
 
 | Record this | Value |
 |---|---|
@@ -78,12 +86,13 @@ Note there is no `--local` this time — this call goes to the deployed agent in
 
 ### Step 6 — Predict the versioning behaviour (1 min)
 
-Answer before you continue. You will verify both answers in Lab 2.
+Answer before you continue. We’ll verify both answers in
+[Lab 2](../lab-2-agent-optimize/README.md).
 
 | Change | New agent version? |
 |---|---|
 | Editing `main.py` or `.agent_configs/baseline/instructions.md`, then `azd deploy` | **Yes** — the agent definition changed |
-| Remapping the `adaptive-copy` **deployment** to a different model (Module 08) | **No** — the agent still references the same deployment name |
+| Switching the model behind the `adaptive-copy` **deployment** in [Module 08](../lab-2-agent-optimize/08-model-router-swap.md) | **No** — the agent still references the same deployment name |
 
 That asymmetry is the practical reason to name deployments after **jobs** (`adaptive-copy`) rather than after models (`gpt-5-4-mini`): you can change the model layer without touching, redeploying, or re-certifying the agent.
 
@@ -102,7 +111,9 @@ cd "$WORKSHOP_SRC"
 AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd ai agent show --output json | head -20
 ```
 
-An immutable, addressable agent version — created from source, with no Dockerfile and no registry — in roughly four minutes. That is your rollback anchor for everything that follows.
+A fixed agent version we can return to later—created from source, with no
+Dockerfile and no registry—in roughly four minutes. This is our safe starting
+point for every comparison that follows.
 
 ## 🧭 Checkpoint and recovery
 
@@ -111,7 +122,7 @@ An immutable, addressable agent version — created from source, with no Dockerf
 | If… | Do this |
 |---|---|
 | Deployment fails repeatedly | Run `azd ai agent doctor` from `$WORKSHOP_SRC` and fix the field it names. |
-| You are over budget | Take the version number and move on. Module 06 can run on whatever traces you already have. |
+| You are over budget | Take the version number and move on. [Module 06](./06-observe-the-agent.md) can use the traces you already have. |
 | You need to redeploy | Just run `azd deploy` again — it creates a new version; the previous one still exists. |
 | The deploy path looks wrong (`Packaging container`) | `codeConfiguration` is missing or malformed in `azure.yaml`. Fix it, then redeploy. |
 

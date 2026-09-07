@@ -8,7 +8,7 @@
 |---|---|---|---|
 | 03 | [Model playground: pick the right tool](./03-model-playground.md) | 18 min | Compare four models on the same launch tasks and justify each role assignment |
 | 04 | [Run the agent locally](./04-run-agent-locally.md) | 12 min | Run Product Launch Studio on localhost and watch the roles cooperate |
-| 05 | [Deploy and version the agent](./05-deploy-and-version.md) | 10 min | Create an immutable agent version in Foundry and smoke-test it |
+| 05 | [Deploy and version the agent](./05-deploy-and-version.md) | 10 min | Create a fixed, numbered agent version in Foundry and smoke-test it |
 | 06 | [Observe what the agent actually did](./06-observe-the-agent.md) | 8 min | Read traces to see role-by-role behaviour, latency, and model usage |
 
 ## The thread through this lab

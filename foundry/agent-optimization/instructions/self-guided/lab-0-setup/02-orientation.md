@@ -10,12 +10,14 @@ Understand what you are building, who does what inside it, and the three rules t
 
 - Describe the Product Launch Studio scenario and its hard constraint.
 - Map each of the four roles plus the image tool to a model deployment.
-- State the hill-climbing rules you will follow in Lab 2.
+- State the hill-climbing rules we’ll follow in
+  [Lab 2](../lab-2-agent-optimize/README.md).
 - Locate the grounded evidence and the fixed evaluation assets.
 
 ## ✅ Prerequisites
 
-- Module 01 started (provisioning may still be running).
+- [Module 01](./01-provision-environment.md) started; provisioning may still be
+  running.
 - A terminal at `$WORKSHOP_SRC`.
 
 <br/>
@@ -54,7 +56,7 @@ flowchart TB
     C --> P["🔍 Product analyst<br/><code>visual-understanding</code> · Claude-Sonnet-6"]
     P --> S["🎯 Campaign strategist<br/><code>campaign-reasoning</code> · GPT-5.4"]
     S --> W["✍️ Campaign copywriter ⭐<br/><code>adaptive-copy</code> · GPT-5.4-mini"]
-    W --> G{"🛡️ Claim guard<br/>deterministic check"}
+    W --> G{"🛡️ Claim guard<br/>code-based check"}
     G -- "blocked" --> X["⛔ Stop and show the issue"]
     G -- "approved" --> I["🎨 MAI image tool<br/><code>creative-image</code> · MAI-Image-2.5"]
     I --> K["📦 Launch kit"]
@@ -62,18 +64,22 @@ flowchart TB
 
 | Role | Why this model | Failure it prevents |
 |---|---|---|
-| **Campaign coordinator** | Fast, cheap; mostly framing and assembly | Burning a frontier model on clerical work |
-| **Product analyst** | Strong long-context reading and vision over the evidence ledger and product imagery | Facts invented because nobody read the source |
+| **Campaign coordinator** | Fast and efficient for framing and assembly | Paying extra for simple coordination |
+| **Product analyst** | Strong reading and vision across the approved sources and product image | Facts invented because nobody checked the source |
 | **Campaign strategist** | Strongest reasoning; audience, channel, and risk judgement | A plan that cannot be defended |
 | **Campaign copywriter** ⭐ | Volume work, quality-sensitive — the interesting trade-off | Copy that is bland, or copy that is expensive |
 | **MAI image tool** | Purpose-built image generation, called as a tool | Text models pretending to make images |
 
 Two details matter more than they look:
 
-- The orchestration passes the **original, immutable evidence ledger** to every handoff. No role is trusted to copy evidence forward correctly.
-- A **deterministic claim guard** — plain code, not a model — checks every copy item before release. Models propose; code enforces.
+- The coordination code reattaches the **original source facts** at every
+  handoff, so no role can accidentally lose or rewrite them.
+- A **code-based claim guard** checks every copy item before release. The models
+  propose; regular code enforces the rules.
 
-⭐ **The copywriter is the only thing you will change in Lab 2.** Everything else stays fixed so the experiment stays clean.
+⭐ **The copywriter is the only thing we’ll change in
+[Lab 2](../lab-2-agent-optimize/README.md).** Everything else stays fixed so
+the experiment stays clean.
 
 ### Step 3 — Learn the hill
 
@@ -107,9 +113,11 @@ flowchart TB
     style BOTTOM fill:none,stroke:none
 ```
 
+### Step 4 — Set the rules and check the yardstick
+
 | Rule | In plain terms | What breaks if you ignore it |
 |---|---|---|
-| **Measure first** | Run the baseline evaluation before touching anything | "Better" becomes a vibe |
+| **Measure first** | Run the baseline evaluation before touching anything | "Better" becomes a guess |
 | **One step at a time** | Change the model *or* the instructions, never both | You cannot attribute the result |
 | **Never move the mountain** | The dataset and rubric are frozen for the whole workshop | Every earlier score becomes meaningless |
 
@@ -123,18 +131,24 @@ cat data/evaluators/campaign-quality.yaml
 ```
 
 - `data/eval-cases.jsonl` — the launch tasks, each with a `query` and an `expected_behavior` rubric.
-- `data/router-complexity-cases.jsonl` — deliberately mixed easy/hard cases, used in Module 08 to see whether request complexity changes anything.
+- `data/router-complexity-cases.jsonl` — deliberately mixed easy/hard cases,
+  used in [Module 08](../lab-2-agent-optimize/08-model-router-swap.md) to see
+  whether request complexity changes anything.
 - `data/evaluators/campaign-quality.yaml` — the judge, which scores grounding and **penalises unsupported claims**.
 
-### Step 4 — Preview your three steps
+### Step 5 — Preview your three steps
 
 | Module | Step you take | What stays frozen |
 |---|---|---|
-| 03 | Choose models per role, by hand, in the playground | — |
-| 08 | Remap the `adaptive-copy` **deployment** to Model Router | Agent code, deployment name, dataset, rubric |
-| 09 | Let Agent Optimizer rewrite **copywriter instructions** | Model, dataset, rubric |
+| [03](../lab-1-model-explore/03-model-playground.md) | Choose models per role, by hand, in the playground | — |
+| [08](../lab-2-agent-optimize/08-model-router-swap.md) | Switch the model behind the `adaptive-copy` **deployment** to Model Router | Agent code, deployment name, dataset, rubric |
+| [09](../lab-2-agent-optimize/09-agent-optimizer.md) | Let Agent Optimizer rewrite **copywriter instructions** | Model, dataset, rubric |
 
-Notice what Module 08 does *not* require: no code edit, no new agent version, no env-var change. The deployment name `adaptive-copy` stays exactly the same; only the model behind it changes. That is the whole point of naming deployments after **jobs** instead of after models.
+Notice what [Module 08](../lab-2-agent-optimize/08-model-router-swap.md) does
+*not* require: no code edit, no new agent version, and no environment-variable
+change. The deployment name `adaptive-copy` stays the same; only the model
+behind it changes. That is why we name deployments after **jobs** instead of
+models.
 
 <br/>
 
@@ -145,8 +159,11 @@ You can answer these three questions without looking:
 1. What may the copywriter say about rain protection? *Only E4's qualified
    wording: water-resistant for light rain and splashes, not waterproof; do not
    submerge it or expose it to heavy rain without cover or protection.*
-2. Which deployment changes in Lab 2, and which stay fixed? *`adaptive-copy` changes; the other four are fixed.*
-3. What would invalidate your Module 07 baseline? *Editing the dataset or the rubric.*
+2. Which deployment changes in [Lab 2](../lab-2-agent-optimize/README.md), and
+   which stay fixed? *`adaptive-copy` changes; the other four are fixed.*
+3. What would invalidate your
+   [Module 07 baseline](../lab-2-agent-optimize/07-baseline-evaluation.md)?
+   *Editing the dataset or the rubric.*
 
 ## 🏆 Quick win
 
@@ -164,7 +181,7 @@ In five seconds you have read the standard your agent will be held to. Most team
 | If… | Do this |
 |---|---|
 | `data/` files are missing | Run `"$WORKSHOP_SRC/scripts/preflight.sh" --env-file "$WORKSHOP_ROOT/.env"` — it validates every required asset and names what is absent. |
-| Module 01 provisioning is still running | Carry on to Module 03's reading and start its playground steps as soon as `azd env get-values` shows the endpoint. |
+| [Module 01](./01-provision-environment.md) provisioning is still running | Continue with [Module 03](../lab-1-model-explore/03-model-playground.md) and start its playground steps when `azd env get-values` shows the endpoint. |
 | The brief seems too short | That is deliberate. A small, closed evidence set makes unsupported claims obvious and evaluation cheap. |
 
 ## 🔧 Troubleshooting
@@ -173,7 +190,7 @@ In five seconds you have read the standard your agent will be held to. Most team
 |---|---|---|
 | `data/campaign-brief.md: No such file` | `WORKSHOP_ROOT` is unset or wrong | `echo "$WORKSHOP_ROOT"` — it must end in `foundry/agent-optimization`. |
 | The mermaid diagrams render as raw text | Your viewer does not support Mermaid | Read them on GitHub, or read the role table instead — it carries the same information. |
-| You cannot find the roles in code | Agent source lives outside this folder | `ls "$WORKSHOP_SRC/agents/product-launch-studio"` — you will open it in Module 04. |
+| You cannot find the roles in code | Agent source lives outside this folder | `ls "$WORKSHOP_SRC/agents/product-launch-studio"` — we’ll open it in [Module 04](../lab-1-model-explore/04-run-agent-locally.md). |
 
 ## ➡️ Next
 

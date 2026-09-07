@@ -8,11 +8,12 @@ Run Product Launch Studio on your own machine, watch the four roles and the imag
 
 ## Objectives
 
-- Prove the orchestration works offline with a deterministic run and the unit tests.
+- Confirm the roles work together with a repeatable offline run and the unit tests.
 - Prepare the agent's Python environment the way `azd` expects.
 - Start the hosted agent locally on `localhost:8088` without deploying anything.
 - Invoke it with a launch request and with a claim-trap request.
-- Locate the copywriter's baseline instructions — the file Agent Optimizer will target in Module 09.
+- Locate the copywriter’s baseline instructions—the file Agent Optimizer
+  targets in [Module 09](../lab-2-agent-optimize/09-agent-optimizer.md).
 
 ## ✅ Prerequisites
 
@@ -37,11 +38,13 @@ You are looking for four things:
 | Path | What it is |
 |---|---|
 | `main.py` | The entry point declared in `azure.yaml` (`codeConfiguration.entryPoint`) |
-| `product_launch_studio/` | The four roles, the image tool, and the deterministic claim guard |
+| `product_launch_studio/` | The four roles, the image tool, and the code-based claim guard |
 | `.agent_configs/baseline/` | The optimization baseline: `metadata.yaml`, `instructions.md`, `tools.json` |
-| `example-request.json` | A sample launch request used by the offline deterministic mode |
+| `example-request.json` | A sample launch request used by the repeatable offline mode |
 
-Open the copywriter's baseline instructions now — you will read a proposed rewrite of this exact file in Module 09:
+Open the copywriter’s baseline instructions now. We’ll compare this exact file
+with a proposed rewrite in
+[Module 09](../lab-2-agent-optimize/09-agent-optimizer.md):
 
 ```bash
 cd "$WORKSHOP_SRC/agents/product-launch-studio"
@@ -53,7 +56,7 @@ cat .agent_configs/baseline/instructions.md
 
 ### Step 2 — Prove the logic works with zero Azure calls (1 min)
 
-The agent ships a deterministic local mode that imports no cloud SDK at all:
+The agent includes a repeatable local mode that makes no cloud calls:
 
 ```bash
 cd "$WORKSHOP_SRC/agents/product-launch-studio"
@@ -61,7 +64,8 @@ python3 main.py --local example-request.json | head -40
 python3 -m pytest -q
 ```
 
-This is the fastest way to see the role handoffs, the evidence ledger, and the claim guard — and it is your fallback if anything cloud-side is broken today.
+This is the fastest way to see the role handoffs, approved source facts, and
+claim guard. It is also our fallback if a cloud service is unavailable today.
 
 ### Step 3 — Prepare the local Python environment (3 min)
 
@@ -139,13 +143,15 @@ AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd ai agent invoke --local \
 
 Every claim in that trap is unsupported. The studio should decline them and may
 offer E4's evidence-safe wording: water-resistant for light rain and splashes,
-but not waterproof. That is the behaviour Module 07's rubric scores.
+but not waterproof. That is the behaviour scored by the rubric in
+[Module 07](../lab-2-agent-optimize/07-baseline-evaluation.md).
 
 <br/>
 
 ## 📤 Expected result
 
-- Step 2 prints a full deterministic launch kit and `pytest` reports all tests passing, with no Azure call made.
+- Step 2 prints the same launch kit for the same input, and `pytest` reports all
+  tests passing without making an Azure call.
 - Terminal 1 shows a ready line and then per-role activity for each hosted invocation.
 - Step 6's first invocation returns a launch kit whose measurable claims cite evidence IDs from `data/campaign-brief.md`.
 - Step 6's second invocation returns a refusal or corrected wording — **not** a
@@ -162,7 +168,7 @@ Run the trap invocation in Step 6 and read the response aloud. An agent that say
 | If… | Do this |
 |---|---|
 | Local run will not start | Do Step 2 (`--local` mode + `pytest`) as your proof, then skip ahead to [Module 05](./05-deploy-and-version.md) and deploy; every later module works against the deployed agent. |
-| You are over budget | Do Steps 1–2 and the first invocation in Step 6, then move on. Module 07 exercises claim traps at scale anyway. |
+| You are over budget | Do Steps 1–2 and the first invocation in Step 6, then move on. [Module 07](../lab-2-agent-optimize/07-baseline-evaluation.md) exercises claim traps at scale. |
 | The venv is in the wrong place | `rm -rf "$WORKSHOP_ROOT/.venv"` and redo Step 3 inside the agent directory. |
 | You need to stop cleanly | `Ctrl+C` in terminal 1. This also clears the saved local session id. |
 

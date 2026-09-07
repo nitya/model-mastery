@@ -35,24 +35,7 @@ Think of the studio as a relay team. Each specialist adds one piece, then passes
 the same evidence forward. Follow steps 1–4 across the top, then 5–8 back across
 the bottom.
 
-```mermaid
-flowchart TB
-    subgraph TOP[" "]
-        direction LR
-        A["1 · Brief + image"] --> B["2 · Coordinator<br/>frames the request"]
-        B --> C["3 · Analyst<br/>finds evidence"]
-        C --> D["4 · Strategist<br/>chooses positioning"]
-    end
-    subgraph BOTTOM[" "]
-        direction RL
-        E["5 · Copywriter<br/>writes channel copy"] --> F["6 · Claim guard<br/>checks every claim"]
-        F --> G["7 · Image tool<br/>creates the visual"]
-        G --> H["8 · Launch kit"]
-    end
-    D --> E
-    style TOP fill:none,stroke:none
-    style BOTTOM fill:none,stroke:none
-```
+<img src="./src/assets/agent-architecture.svg" alt="Product Launch Studio flow: four steps across the top row, then four steps back across the bottom row" width="100%">
 
 ### Our optimization target
 
@@ -190,6 +173,7 @@ setup because its Azure environment is already provisioned.
 
 ```text
 foundry/agent-optimization/
+├── AGENTS.md
 ├── README.md
 ├── sample.env
 ├── requirements.txt

@@ -4,29 +4,31 @@
 
 ## Goal
 
-Remap the existing Campaign Copywriter deployment to Model Router, run three requests of increasing
-complexity, and compare the result with your fixed-model baseline.
+Switch the model behind the existing Campaign Copywriter deployment to Model
+Router, run three requests of increasing complexity, and compare the result
+with our fixed-model baseline.
 
 ## Learning objectives
 
 By the end of this module you can:
 
-- Preview and apply a model remap without adding a deployment.
+- Preview and apply a model change without adding a deployment.
 - Describe what Model Router decides and what it does not.
 - Compare a routed version with a fixed-model baseline on the same rubric.
 
 ## Prerequisites
 
-- Lab 2 module 03 complete: you have a baseline score recorded.
+- [Lab 2, module 03](./03-batch-evaluation.md) complete: you have a baseline
+  score recorded.
 - The parent workshop root contains the instructor-completed `.env`.
 
 >[!Alert] The workshop always has exactly five purpose-based deployments. There is no separate
-router deployment. This module remaps the same `adaptive-copy` deployment from GPT-5.4-mini to
-Model Router.
+router deployment. This module switches the model behind `adaptive-copy` from
+GPT-5.4-mini to Model Router while keeping the deployment name.
 
 ## Instructions
 
-### Step 1 — Preview and apply the remap (1 minute)
+### Step 1 — Preview the model change (30 seconds)
 
 1. [] From the `src` azd project root, run the default what-if preview:
 
@@ -41,7 +43,9 @@ Model Router.
 	>[!tip] For a local-only preview that makes no Azure call, use
     `.\scripts\switch-router.ps1 -EnvFile ..\.env -Offline`.
 
-1. [] Apply the reviewed remap:
+### Step 2 — Apply and confirm the change (30 seconds)
+
+1. [] Apply the reviewed change:
 
     ```powershell
     .\scripts\switch-router.ps1 -EnvFile ..\.env -Apply
@@ -55,7 +59,7 @@ Model Router.
 	>[!Alert] Do not run bare `azd provision`. The script sets the four adaptive-copy model values
     and `COPYWRITER_DEPLOYMENT_MODE`, then provisions only the reviewed configuration.
 
-1. [] Verify the remap while leaving the hosted-agent version unchanged:
+1. [] Confirm the hosted-agent version stays unchanged:
 
     ```powershell
     azd env get-value COPYWRITER_DEPLOYMENT_MODE
@@ -67,7 +71,7 @@ Model Router.
 >[!Knowledge] No Python changed and the deployment name did not change. The agent still calls
 `adaptive-copy`; the model behind that purpose-based name is now Model Router.
 
-### Step 2 — Run three complexity levels (2 minutes)
+### Step 3 — Run three complexity levels (2 minutes)
 
 1. [] **Simple** — a short caption:
 
@@ -109,7 +113,7 @@ aggregate quality, latency, and cost across your dataset — never on one routin
 >[!Knowledge] Model Router chooses **which model answers each request**. It does not change your
 instructions, tools, rubric, dataset, or purpose-based deployment name.
 
-### Step 3 — Re-evaluate and compare (2 minutes)
+### Step 4 — Re-evaluate and compare (2 minutes)
 
 1. [] Re-run the same evaluation and save the result in a learner-local directory:
 
@@ -136,8 +140,9 @@ instructions, tools, rubric, dataset, or purpose-based deployment name.
 
 ## Expected result
 
-The existing `adaptive-copy` deployment is remapped to Model Router without an agent redeploy, three
-complexity levels ran, and you have a second scored row on the identical dataset and rubric.
+The model behind `adaptive-copy` now uses Model Router without an agent
+redeploy. Three complexity levels ran, and you have a second scored row using
+the same dataset and rubric.
 
 ## Quick win
 
@@ -168,7 +173,7 @@ Its values are illustrative, not live measurements. Mark the scorecard row **pre
 | Preview says `.env` is missing | Confirm `C:\LabFiles\model-mastery\foundry\agent-optimization\.env` exists. It belongs at the parent workshop root, not under `src`. |
 | Preview fails preflight | From `src`, run `.\scripts\preflight.ps1 -EnvFile ..\.env -Online` and follow its remediation. |
 | Apply waits for input | Type `SWITCH`, or rerun the reviewed command with `-Yes`. |
-| Provisioning fails during the remap | Re-run the same `-Apply` command; it is idempotent. If it fails again, continue with the prepared example and tell your instructor. |
+| Provisioning fails during the change | Re-run the same `-Apply` command; it is safe to repeat. If it fails again, continue with the prepared example and tell your instructor. |
 | Every request appears to route to the same model | Normal. Your three prompts may not be far enough apart in complexity. Report what you observed. |
 | The trace does not show an underlying model name | Not all telemetry surfaces it. Compare latency and token usage instead. |
 | `429` during the three requests | Shared deployment under class load. Wait 15 seconds and resend that request only. |

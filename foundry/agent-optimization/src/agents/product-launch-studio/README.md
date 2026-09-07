@@ -4,15 +4,15 @@ Product Launch Studio is a beginner-friendly Microsoft Foundry hosted agent.
 Four roles collaborate in order:
 
 1. **Campaign Coordinator** turns the request into a launch brief.
-2. **Product Analyst** extracts only facts supported by the evidence ledger.
+2. **Product Analyst** extracts only facts supported by the approved evidence.
 3. **Campaign Strategist** chooses an audience, channel, and message plan.
 4. **Campaign Copywriter** writes evidence-cited copy.
 
-MAI image generation is a tool available to the copywriter. It is deliberately
-not modeled as a fifth agent. A deterministic claim guard checks every copy
-item before release. The orchestration code always supplies the original,
-immutable evidence ledger to each handoff instead of trusting an agent to copy
-it correctly.
+The studio calls MAI image generation as a tool after the copy passes review.
+It is deliberately not modeled as a fifth agent. A code-based claim guard
+checks every copy item before release. The coordination code supplies the
+original source facts at each handoff instead of trusting an agent to copy them
+correctly.
 
 ## Local workshop run (no Azure calls)
 

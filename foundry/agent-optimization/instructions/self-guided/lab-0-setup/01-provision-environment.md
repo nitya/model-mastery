@@ -1,6 +1,7 @@
 # 01 · Provision the workshop environment
 
-⏱️ **Time:** 10 minutes (Azure provisioning runs in the background while you read Module 02)
+⏱️ **Time:** 10 minutes (Azure provisioning runs in the background while you
+read [Module 02](./02-orientation.md))
 
 ## 🎯 Goal
 
@@ -48,7 +49,8 @@ In a Codespace, use the device-code flow if the browser handoff does not complet
 
 ### Step 3 — Create your private `.env`
 
-`sample.env` is the canonical list of every variable the workshop reads. Copy it, then fill in the four values only you know.
+`sample.env` is the complete list of variables the workshop reads. Let’s copy
+it, then fill in the four values that depend on your Azure environment.
 
 ```bash
 cd "$WORKSHOP_ROOT"
@@ -137,7 +139,10 @@ az cognitiveservices account deployment list \
   --output table
 ```
 
-One table, five rows: your entire model layer, with pinned versions, in under a minute. Screenshot-worthy — and it is the exact table you will compare against in Module 08 after `adaptive-copy` changes.
+One table, five rows: your entire model layer, with pinned versions, in under a
+minute. Save it—we’ll compare it with the table in
+[Module 08](../lab-2-agent-optimize/08-model-router-swap.md) after
+`adaptive-copy` changes.
 
 ## 🧭 Checkpoint and recovery
 
@@ -147,7 +152,7 @@ One table, five rows: your entire model layer, with pinned versions, in under a 
 |---|---|
 | Provisioning failed partway | Re-run Step 7. `azd provision` is idempotent; it retries only what is missing. |
 | A single model deployment failed on quota | Fix the region or capacity in `.env`, re-run Steps 5 and 7. Everything already created is preserved. |
-| You are more than 5 minutes over budget | Continue to Module 02 while provisioning finishes in another terminal. Modules 02 and 03 only need the project endpoint and one working deployment. |
+| You are more than 5 minutes over budget | Continue with [Module 02](./02-orientation.md) while provisioning finishes. [Modules 02](./02-orientation.md) and [03](../lab-1-model-explore/03-model-playground.md) need only the project endpoint and one working deployment. |
 | Nothing works and you must reset | `./scripts/cleanup.sh --preview` to see what exists, then `--apply` to delete, and start again from Step 3. |
 
 ## 🔧 Troubleshooting

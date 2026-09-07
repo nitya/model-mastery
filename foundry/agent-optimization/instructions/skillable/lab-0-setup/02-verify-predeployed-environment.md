@@ -18,7 +18,8 @@ By the end of this module you can:
 
 ## Prerequisites
 
-- Module 01 complete: VS Code open at the workshop root, terminal at
+- [Module 01](./01-sign-in-and-open-project.md) complete: VS Code open at the
+  workshop root, terminal at
   `C:\LabFiles\model-mastery\foundry\agent-optimization\src`, and `az` and `azd` signed in.
 
 >[!Alert] **You will not provision anything in this workshop.** Every command in this module is
@@ -53,7 +54,8 @@ read-only. If a check fails, the fix is a configuration or sign-in fix — never
 
 >[!Knowledge] The application code never mentions GPT, Claude, or MAI. It reads these environment
 variables and calls a **deployment name**. That indirection is what lets your instructor swap the
-model behind `visual-understanding`, and what lets you swap the copywriter to Model Router in Lab 2,
+model behind `visual-understanding`, and what lets us switch the copywriter to
+Model Router in [Lab 2](../lab-2-agent-optimize/04-model-router.md),
 with no code change at all.
 
 ### Step 2 — Confirm the model deployments exist
@@ -72,8 +74,9 @@ with no code change at all.
 
 <!-- SCREENSHOT: ../images/lab0-deployment-list.png -->
 
-	>[!note] There is no separate router deployment. In Lab 2, the reviewed script remaps the same
-    `adaptive-copy` deployment from GPT-5.4-mini to Model Router.
+	>[!note] There is no separate router deployment. In
+	[Lab 2](../lab-2-agent-optimize/04-model-router.md), the reviewed script switches
+	the model behind `adaptive-copy` from GPT-5.4-mini to Model Router.
 
 ### Step 3 — Confirm the baseline agent is deployed
 
@@ -90,7 +93,7 @@ with no code change at all.
     number and a running state.
 
 1. [] Write down the version number. This is your **baseline version**, and you will compare
-   against it in Lab 2.
+   against it in [Lab 2](../lab-2-agent-optimize/03-batch-evaluation.md).
 
 <!-- SCREENSHOT: ../images/lab0-agent-show.png -->
 
@@ -133,8 +136,8 @@ development setting, not configuration.
     `checkpoints\00-baseline`, `checkpoints\01-evidence-optimized`,
     `checkpoints\optimizer-result.sample.json`, and files under `checkpoints\evaluation`.
 
->[!Knowledge] `checkpoints\` is your safety net. Each one holds a known-good artifact — agent
-instructions and explicitly labelled instructor-prepared evaluation examples — so a slow or failed
+>[!Knowledge] `checkpoints\` is our safety net. It holds known-good files—agent
+instructions and clearly labelled instructor-prepared evaluation examples—so a slow or failed
 step never costs you the rest of the workshop. These examples are not live measured data.
 
 ## Expected result
@@ -157,7 +160,7 @@ Set-Location 'C:\LabFiles\model-mastery\foundry\agent-optimization\src'
 **Expected result:** the final line says `[OK] Preflight completed without making changes.`
 
 >[!Hint] If preflight fails on **authentication**, re-run `az login` and `azd auth login` from
-Module 01, then run preflight again.
+[Module 01](./01-sign-in-and-open-project.md), then run preflight again.
 >
 >If it fails on **environment**, run `azd env select workshop` and retry.
 >
@@ -177,6 +180,8 @@ the missing resource; your lab account intentionally cannot.
 
 ## Transition
 
-Lab 0 is complete in 10 minutes. Your environment is verified and every model in the catalog is
-callable. In Lab 1 you will meet those models one at a time in the Microsoft Foundry playground and
+[Lab 0](./00-welcome.md) is complete in 10 minutes. Your environment is verified,
+and every model in the catalog is callable. In
+[Lab 1](../lab-1-model-explore/00-hill-climbing-orientation.md), we’ll meet those
+models one at a time in the Microsoft Foundry playground and
 decide, with evidence, which capability belongs to which task.

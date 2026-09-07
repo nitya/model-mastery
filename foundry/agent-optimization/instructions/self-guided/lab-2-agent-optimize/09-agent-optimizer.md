@@ -64,7 +64,11 @@ cd "$WORKSHOP_SRC"
 cat data/eval.yaml
 ```
 
-Confirm `dataset` and `evaluators` are the **same** ones you baselined with in Module 07 — and note `options.optimization_config.model_search_space`, which limits the optimizer to `adaptive-copy` and `campaign-reasoning`. If they differ, stop and fix that first — otherwise you are comparing altitudes on two different mountains.
+Confirm `dataset` and `evaluators` match
+[Module 07](./07-baseline-evaluation.md). Then note
+`options.optimization_config.model_search_space`, which limits the optimizer to
+`adaptive-copy` and `campaign-reasoning`. If they differ, stop and fix them;
+otherwise we are comparing altitudes on different mountains.
 
 The optimizer model is chosen from a small allowlist of reasoning models (GPT-5, GPT-5.1, GPT-5.2, GPT-5.4, GPT-5.5, DeepSeek-V4-Pro, DeepSeek-V-3.2). In this workshop that is your `campaign-reasoning` deployment, backed by GPT-5.4.
 
@@ -75,7 +79,10 @@ cd "$WORKSHOP_SRC"
 AZURE_DEV_USER_AGENT=microsoft_foundry_skill azd ai agent optimize --optimize-model campaign-reasoning
 ```
 
-If it reports that the eval contract is missing, copy it into the agent root exactly as in Module 07 (`cp data/eval.yaml agents/product-launch-studio/eval.yaml`) and re-run — same file, same experiment.
+If it reports that the evaluation setup is missing, copy it into the agent root
+as shown in [Module 07](./07-baseline-evaluation.md):
+`cp data/eval.yaml agents/product-launch-studio/eval.yaml`. Then run the command
+again—same file, same experiment.
 
 Capture the **operation ID** it prints. Monitor it in a second terminal — do not block this one:
 
@@ -145,7 +152,7 @@ Why applying locally and deploying beats one-shot deployment of a candidate:
 | The job is still running at the end of the workshop | Expected. Note the operation ID and check later with `optimize status <id>`. |
 | The job fails to start | Verify `.agent_configs/baseline/metadata.yaml` names a real deployment (`adaptive-copy`, not `copywriter-fixed`) and that the eval contract validates (`azd ai agent doctor`). |
 | `--optimize-model` is rejected | The deployment must be backed by an allowlisted optimizer model. Confirm `campaign-reasoning` is GPT-5.4, and check `azd ai agent optimize --help`. |
-| You are tempted to apply a candidate now | Don't. Finish Module 10, then apply with a diff in front of you. |
+| You are tempted to apply a candidate now | Don’t. Finish [Module 10](./10-wrap-up.md), then apply with the diff in front of you. |
 
 ## 🔧 Troubleshooting
 
@@ -154,7 +161,7 @@ Why applying locally and deploying beats one-shot deployment of a candidate:
 | `Optimization requires a baseline config` | `.agent_configs/baseline/` missing or empty | Restore it in the agent source directory beside `main.py`. |
 | Candidates all score the same as baseline | The optimizer had nothing to vary | Confirm the copywriter really reads its instructions via `load_config()` in `product_launch_studio/optimizer.py`. |
 | `eval_config_invalid` | `eval.yaml` failed validation | `azd ai agent doctor`, fix the named field. |
-| Job cancelled or timed out | Quota pressure from concurrent eval runs | Re-run when the Module 08 evaluation finishes. |
+| Job cancelled or timed out | Quota pressure from concurrent evaluation runs | Re-run when the [Module 08 evaluation](./08-model-router-swap.md) finishes. |
 | Applied a candidate by accident | It only changed local files | `git checkout -- agents/product-launch-studio/.agent_configs/` — nothing reaches Foundry until `azd deploy`. |
 
 ## ➡️ Next

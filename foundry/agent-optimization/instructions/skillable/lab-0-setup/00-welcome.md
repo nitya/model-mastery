@@ -34,18 +34,18 @@ observations with manual-backed claims.
 Four AI roles collaborate, plus one image tool:
 
 ```mermaid
-flowchart TD
-    IN["Campaign brief<br/>+ product image"] --> CO["Campaign Coordinator"]
-    CO --> PA["Product Analyst<br/>grounded visual evidence"]
-    CO --> CS["Campaign Strategist<br/>audience and positioning"]
-    CO --> CW["Campaign Copywriter<br/>channel copy"]
-    CO --> IG["Image tool<br/>promotional visual"]
-    PA --> CO
-    CS --> CO
-    CW --> CO
-    IG --> CO
-    CO --> OUT["Campaign package"]
+flowchart LR
+    IN["1 · Brief + image"] --> CO["2 · Coordinator<br/>frames the request"]
+    CO --> PA["3 · Analyst<br/>finds evidence"]
+    PA --> CS["4 · Strategist<br/>chooses positioning"]
+    CS --> CW["5 · Copywriter<br/>writes channel copy"]
+    CW --> CG["6 · Claim guard<br/>checks every claim"]
+    CG --> IG["7 · Image tool<br/>creates the visual"]
+    IG --> OUT["8 · Launch kit"]
 ```
+
+Think of this as a relay team: each specialist adds one piece and passes the
+same evidence forward.
 
 >[!Knowledge] A **model** is the AI itself. A **model deployment** is a named, callable instance of
 that model in your Microsoft Foundry project. An **agent** is a program that uses a model to decide

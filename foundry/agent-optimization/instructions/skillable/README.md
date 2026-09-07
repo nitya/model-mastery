@@ -68,19 +68,19 @@ MIT-licensed photograph, product record, and manual attributed in
 `src\assets\PROVENANCE.md`.
 
 ```mermaid
-flowchart TD
-    IN["Campaign brief<br/>+ product image"] --> CO["Campaign Coordinator<br/>campaign-coordinator"]
-    CO --> PA["Product Analyst<br/>visual-understanding"]
-    CO --> CS["Campaign Strategist<br/>campaign-reasoning"]
-    CO --> CW["Campaign Copywriter<br/>adaptive-copy"]
-    CO --> IG["Image tool<br/>creative-image"]
-    PA --> CO
-    CS --> CO
-    CW --> CO
-    IG --> CO
-    CO --> OUT["Campaign package"]
-    OPS["Foundry AgentOps<br/>traces - metrics - evaluation - versions - optimization"] -.-> CO
+flowchart LR
+    IN["1 · Brief + image"] --> CO["2 · Coordinator<br/>frames the request"]
+    CO --> PA["3 · Analyst<br/>finds evidence"]
+    PA --> CS["4 · Strategist<br/>chooses positioning"]
+    CS --> CW["5 · Copywriter<br/>writes channel copy"]
+    CW --> CG["6 · Claim guard<br/>checks every claim"]
+    CG --> IG["7 · Image tool<br/>creates the visual"]
+    IG --> OUT["8 · Launch kit"]
 ```
+
+The studio works like a relay team: each specialist adds one piece and passes
+the same evidence forward. Foundry captures traces across the run so learners
+can measure and improve the copywriter without changing the rest of the team.
 
 | Role | Deployment learners see | Underlying model |
 |---|---|---|

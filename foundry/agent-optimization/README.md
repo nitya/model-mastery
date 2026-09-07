@@ -49,26 +49,25 @@ We’ll change **one thing at a time**, then score each version with the
 [Inspect image provenance](./src/assets/PROVENANCE.md) ·
 [Open the evaluation rubric](./src/data/evaluators/campaign-quality.yaml)
 
-### Agent architecture
+### How one request becomes a launch kit
+
+Think of the studio as a relay team. Each specialist adds one piece, then passes
+the same evidence forward.
 
 ```mermaid
-flowchart TB
-    U["Brief + product image"] --> C["Campaign Coordinator<br/>GPT-5.4-mini"]
-    C --> V["Product Analyst<br/>Claude-Sonnet-6 or GPT-5.4"]
-    C --> S["Campaign Strategist<br/>GPT-5.4"]
-    C --> W["Campaign Copywriter<br/>GPT-5.4-mini → Model Router"]
-    C --> I["Image tool<br/>MAI-Image-2.5"]
-    V --> P["Grounded campaign package"]
-    S --> P
-    W --> P
-    I --> P
-    O["Foundry AgentOps<br/>traces · evaluation · comparison · optimization"] -.-> C
-    O -.-> V
-    O -.-> S
-    O -.-> W
+flowchart LR
+    A["1 · Brief + image"] --> B["2 · Coordinator<br/>frames the request"]
+    B --> C["3 · Analyst<br/>finds evidence"]
+    C --> D["4 · Strategist<br/>chooses positioning"]
+    D --> E["5 · Copywriter<br/>writes channel copy"]
+    E --> F["6 · Claim guard<br/>checks every claim"]
+    F --> G["7 · Image tool<br/>creates the visual"]
+    G --> H["8 · Launch kit"]
 ```
 
-We’ll focus our improvements on the **Campaign Copywriter**. First, we’ll change
+Foundry captures traces across the run. We use those traces, the fixed dataset,
+and the same evaluation rubric to improve only the **Campaign Copywriter**.
+First, we’ll change
 how it picks a model in
 [Module 08](./instructions/self-guided/lab-2-agent-optimize/08-model-router-swap.md).
 Then, we’ll improve its instructions in

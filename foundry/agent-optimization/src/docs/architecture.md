@@ -2,17 +2,18 @@
 
 ```mermaid
 flowchart LR
-  U[Participant] --> A[Product Launch Studio<br/>Hosted Responses agent]
-  A --> C[campaign-coordinator<br/>GPT-5.4-mini]
-  A --> V[visual-understanding<br/>Claude Sonnet 6<br/>or GPT-5.4 fallback]
-  A --> R[campaign-reasoning<br/>GPT-5.4]
-  A --> D[adaptive-copy<br/>GPT-5.4-mini then Model Router]
-  A --> I[creative-image<br/>MAI-Image-2.5]
-  A --> P[Foundry project]
-  P --> F[Foundry account]
-  P --> O[Application Insights]
-  O --> L[Log Analytics]
+  U[Brief + product image] --> C[Coordinator<br/>frames the request]
+  C --> V[Product analyst<br/>finds evidence]
+  V --> R[Campaign strategist<br/>chooses positioning]
+  R --> D[Copywriter<br/>writes channel copy]
+  D --> G[Claim guard<br/>checks every claim]
+  G --> I[Image tool<br/>creates the visual]
+  I --> K[Launch kit]
 ```
+
+The roles run in this order and carry the original evidence through every
+handoff. Foundry captures traces for the full run; Application Insights and Log
+Analytics make those traces available for observation and evaluation.
 
 | Stable deployment | Initial catalog intent | Purpose |
 | --- | --- | --- |

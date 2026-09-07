@@ -44,7 +44,9 @@ If a claim is not in the brief, the agent may not make it — not "should avoid,
 
 ### Step 2 — Meet the studio
 
-Four roles run in order, and the copywriter can call one image tool. Each role is a specialist, and each specialist gets a model chosen for its job.
+Four roles run in order, then the studio checks the copy and calls the image
+tool. Each role is a specialist, and each specialist gets a model chosen for
+its job.
 
 ```mermaid
 flowchart TB
@@ -52,11 +54,10 @@ flowchart TB
     C --> P["🔍 Product analyst<br/><code>visual-understanding</code> · Claude-Sonnet-6"]
     P --> S["🎯 Campaign strategist<br/><code>campaign-reasoning</code> · GPT-5.4"]
     S --> W["✍️ Campaign copywriter ⭐<br/><code>adaptive-copy</code> · GPT-5.4-mini"]
-    W --> I["🎨 MAI image tool<br/><code>creative-image</code> · MAI-Image-2.5"]
     W --> G{"🛡️ Claim guard<br/>deterministic check"}
-    G -- "unsupported claim" --> W
-    G -- "approved" --> K["📦 Launch kit"]
-    I --> K
+    G -- "blocked" --> X["⛔ Stop and show the issue"]
+    G -- "approved" --> I["🎨 MAI image tool<br/><code>creative-image</code> · MAI-Image-2.5"]
+    I --> K["📦 Launch kit"]
 ```
 
 | Role | Why this model | Failure it prevents |

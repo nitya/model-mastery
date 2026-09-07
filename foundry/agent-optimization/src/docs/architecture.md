@@ -1,14 +1,22 @@
 # Architecture and model roles
 
 ```mermaid
-flowchart LR
-  U[Brief + product image] --> C[Coordinator<br/>frames the request]
-  C --> V[Product analyst<br/>finds evidence]
-  V --> R[Campaign strategist<br/>chooses positioning]
-  R --> D[Copywriter<br/>writes channel copy]
-  D --> G[Claim guard<br/>checks every claim]
-  G --> I[Image tool<br/>creates the visual]
-  I --> K[Launch kit]
+flowchart TB
+  subgraph TOP[" "]
+    direction LR
+    U[1 · Brief + image] --> C[2 · Coordinator<br/>frames the request]
+    C --> V[3 · Product analyst<br/>finds evidence]
+    V --> R[4 · Campaign strategist<br/>chooses positioning]
+  end
+  subgraph BOTTOM[" "]
+    direction RL
+    D[5 · Copywriter<br/>writes channel copy] --> G[6 · Claim guard<br/>checks every claim]
+    G --> I[7 · Image tool<br/>creates the visual]
+    I --> K[8 · Launch kit]
+  end
+  R --> D
+  style TOP fill:none,stroke:none
+  style BOTTOM fill:none,stroke:none
 ```
 
 The roles run in this order and carry the original evidence through every

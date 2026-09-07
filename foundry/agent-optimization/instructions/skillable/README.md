@@ -68,19 +68,28 @@ MIT-licensed photograph, product record, and manual attributed in
 `src\assets\PROVENANCE.md`.
 
 ```mermaid
-flowchart LR
-    IN["1 · Brief + image"] --> CO["2 · Coordinator<br/>frames the request"]
-    CO --> PA["3 · Analyst<br/>finds evidence"]
-    PA --> CS["4 · Strategist<br/>chooses positioning"]
-    CS --> CW["5 · Copywriter<br/>writes channel copy"]
-    CW --> CG["6 · Claim guard<br/>checks every claim"]
-    CG --> IG["7 · Image tool<br/>creates the visual"]
-    IG --> OUT["8 · Launch kit"]
+flowchart TB
+    subgraph TOP[" "]
+        direction LR
+        IN["1 · Brief + image"] --> CO["2 · Coordinator<br/>frames the request"]
+        CO --> PA["3 · Analyst<br/>finds evidence"]
+        PA --> CS["4 · Strategist<br/>chooses positioning"]
+    end
+    subgraph BOTTOM[" "]
+        direction RL
+        CW["5 · Copywriter<br/>writes channel copy"] --> CG["6 · Claim guard<br/>checks every claim"]
+        CG --> IG["7 · Image tool<br/>creates the visual"]
+        IG --> OUT["8 · Launch kit"]
+    end
+    CS --> CW
+    style TOP fill:none,stroke:none
+    style BOTTOM fill:none,stroke:none
 ```
 
 The studio works like a relay team: each specialist adds one piece and passes
-the same evidence forward. Foundry captures traces across the run so learners
-can measure and improve the copywriter without changing the rest of the team.
+the same evidence forward. Follow steps 1–4 across the top, then 5–8 back across
+the bottom. Foundry captures traces across the run so learners can measure and
+improve the copywriter without changing the rest of the team.
 
 | Role | Deployment learners see | Underlying model |
 |---|---|---|

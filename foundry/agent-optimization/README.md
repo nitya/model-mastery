@@ -32,17 +32,26 @@ the part of the agent that writes the campaign copy.
 ### Agent architecture: how one request becomes a launch kit
 
 Think of the studio as a relay team. Each specialist adds one piece, then passes
-the same evidence forward.
+the same evidence forward. Follow steps 1–4 across the top, then 5–8 back across
+the bottom.
 
 ```mermaid
-flowchart LR
-    A["1 · Brief + image"] --> B["2 · Coordinator<br/>frames the request"]
-    B --> C["3 · Analyst<br/>finds evidence"]
-    C --> D["4 · Strategist<br/>chooses positioning"]
-    D --> E["5 · Copywriter<br/>writes channel copy"]
-    E --> F["6 · Claim guard<br/>checks every claim"]
-    F --> G["7 · Image tool<br/>creates the visual"]
-    G --> H["8 · Launch kit"]
+flowchart TB
+    subgraph TOP[" "]
+        direction LR
+        A["1 · Brief + image"] --> B["2 · Coordinator<br/>frames the request"]
+        B --> C["3 · Analyst<br/>finds evidence"]
+        C --> D["4 · Strategist<br/>chooses positioning"]
+    end
+    subgraph BOTTOM[" "]
+        direction RL
+        E["5 · Copywriter<br/>writes channel copy"] --> F["6 · Claim guard<br/>checks every claim"]
+        F --> G["7 · Image tool<br/>creates the visual"]
+        G --> H["8 · Launch kit"]
+    end
+    D --> E
+    style TOP fill:none,stroke:none
+    style BOTTOM fill:none,stroke:none
 ```
 
 ### Where AgentOps fits

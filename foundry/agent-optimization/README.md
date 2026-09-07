@@ -152,18 +152,13 @@ foundry/agent-optimization/
 <details>
 <summary><strong>Instructor preparation</strong></summary>
 
-1. Verify exact model identifiers, versions, regional availability, Marketplace
-   terms, and quota listed in [`sample.env`](./sample.env).
-2. Run [`src/scripts/preflight.sh`](./src/scripts/preflight.sh) and the complete
-   workshop before delivery.
-3. Refresh the prepared comparison artifacts used by
-   [Module 07](./instructions/self-guided/lab-2-agent-optimize/07-baseline-evaluation.md),
-   [Module 08](./instructions/self-guided/lab-2-agent-optimize/08-model-router-swap.md),
-   and [Module 09](./instructions/self-guided/lab-2-agent-optimize/09-agent-optimizer.md).
-4. Tell learners which region and model versions to use, and identify preview
-   features. Routing outcomes are measured, never promised.
+| When | Action | Done when |
+|---|---|---|
+| One week before | Check the region, model versions, Marketplace access, and quota in [`sample.env`](./sample.env). | All five deployments are available. |
+| One day before | Run [`preflight.sh`](./src/scripts/preflight.sh), complete the workshop, and refresh the [example results](./src/checkpoints/evaluation/). | Every lab works with the versions learners will use. |
+| At the start | Share the region and model versions. Point out preview features and remind learners that routing results may vary. | Learners know what values to enter and what to expect. |
 
-[Open the full instructor guide](./src/docs/instructor-guide.md).
+[Open the instructor checklist](./src/docs/instructor-guide.md).
 
 </details>
 

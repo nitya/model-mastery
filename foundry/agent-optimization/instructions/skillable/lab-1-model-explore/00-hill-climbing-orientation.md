@@ -61,22 +61,34 @@ evaluation tells you whether your fix actually worked.
 	>[!Hint] It does not reason, delegate, or hold a conversation. It takes approved evidence and
     strategy in, and returns an image. That is a function call, so it is modelled as a tool.
 
-### Step 3 — Use hill climbing for AgentOps
+### Step 3 — Connect AgentOps to the hill climb
 
-1. [] Read the AgentOps loop you will use in Lab 2. Hill climbing keeps it
-   honest: change one lever, measure again, and keep only improvements.
+1. [] Keep the two scales clear.
+
+    | Scale | What it means |
+    |---|---|
+    | **Hill climbing** | The entire journey from the measured baseline toward the target |
+    | **AgentOps** | The workflow repeated for each step: run, observe, evaluate, improve, and compare |
+
+1. [] Read the AgentOps workflow you will use to verify each step in Lab 2.
 
     ```mermaid
-    flowchart LR
-        A["1. Baseline<br/>fixed copywriter model"] --> B["2. Observe<br/>read one trace"]
-        B --> C["3. Evaluate<br/>score the dataset"]
-        C --> D["4. Change ONE lever"]
-        D --> E["5. Re-evaluate<br/>same data, same rubric"]
-        E --> F{"Better?"}
+    flowchart TB
+        subgraph TOP[" "]
+            direction LR
+            A["1 · Run current version"] --> B["2 · Observe<br/>read one trace"]
+            B --> C["3 · Evaluate<br/>score the dataset"]
+        end
+        subgraph BOTTOM[" "]
+            direction RL
+            D["4 · Change one lever"] --> E["5 · Re-evaluate<br/>same data + rubric"]
+            E --> F{"6 · Better?"}
+        end
+        C --> D
         F -->|yes| G["Keep the change"]
         F -->|no| H["Discard and try<br/>a different lever"]
-        G --> D
-        H --> D
+        style TOP fill:none,stroke:none
+        style BOTTOM fill:none,stroke:none
     ```
 
 1. [] Commit the four rules to memory.

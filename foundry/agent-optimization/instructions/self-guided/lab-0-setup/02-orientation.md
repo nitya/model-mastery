@@ -77,20 +77,34 @@ Two details matter more than they look:
 
 ### Step 3 — Learn the hill
 
-**AgentOps** is the routine around a working agent: observe what happened,
-evaluate the results, improve one target, and compare versions. In this
-workshop, we use hill climbing to make that routine controlled and repeatable.
+Think at two scales:
 
-You cannot see the summit. You can only measure your **altitude** and take a
-**step**.
+| Scale | What it means |
+|---|---|
+| **Hill climbing** | The entire journey from the measured baseline toward our target |
+| **AgentOps** | The workflow we repeat to take and verify each step: run, observe, evaluate, improve, and compare |
+
+You cannot see the summit. You can only measure your **altitude** and take one
+controlled **step** at a time. For every step, AgentOps tells us whether we
+actually moved uphill.
 
 ```mermaid
-flowchart LR
-    A["📍 Where you stand<br/>baseline scores"] --> B["👣 One step<br/>one change"]
-    B --> C["📏 Altimeter<br/>same dataset + same rubric"]
-    C --> D{"Higher?"}
+flowchart TB
+    subgraph TOP[" "]
+        direction LR
+        A["1 · Run"] --> B["2 · Observe"]
+        B --> C["3 · Evaluate"]
+    end
+    subgraph BOTTOM[" "]
+        direction RL
+        S["4 · Change one lever"] --> M["5 · Measure again<br/>same dataset + rubric"]
+        M --> D{"6 · Higher?"}
+    end
+    C --> S
     D -- Yes --> E["✅ Keep"]
     D -- No --> F["↩️ Revert"]
+    style TOP fill:none,stroke:none
+    style BOTTOM fill:none,stroke:none
 ```
 
 | Rule | In plain terms | What breaks if you ignore it |

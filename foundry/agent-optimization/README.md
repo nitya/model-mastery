@@ -54,24 +54,6 @@ flowchart TB
     style BOTTOM fill:none,stroke:none
 ```
 
-### Where AgentOps fits
-
-**AgentOps** is how we operate and improve an agent after it works the first
-time. It is not another box inside the agent. It is the feedback loop around the
-whole run:
-
-```mermaid
-flowchart LR
-    A["Run the agent"] --> B["Observe<br/>traces + latency"]
-    B --> C["Evaluate<br/>quality + grounding"]
-    C --> D["Improve<br/>one target"]
-    D --> E["Compare<br/>and choose a version"]
-```
-
-Then we repeat. Foundry gives us the traces, evaluations, and versions that make
-each decision visible instead of relying on a feeling that the agent seems
-better.
-
 ### Our optimization target
 
 | Keep fixed | Improve | Success means |
@@ -87,22 +69,50 @@ Then we’ll improve its instructions in
 
 ## 3. What is our approach?
 
-We’ll use **hill climbing**: mark where we are, take one controlled step, and
-measure again. If the new result is better, we keep it. If it is worse, we step
-back.
+Two ideas work together at different scales:
+
+- **Hill climbing is the entire journey** from our measured baseline toward our
+  target. We move by changing one lever at a time.
+- **AgentOps is the workflow for each step**. We run, observe, evaluate, improve,
+  and compare before deciding whether that step moved us uphill.
 
 Why does this matter? Changing the model, prompt, data, and scoring rules at the
 same time may produce a different result, but we won’t know what caused it.
 Hill climbing keeps the experiment small enough to explain and repeat.
 
+### The complete hill climb
+
 ```mermaid
 flowchart LR
-    A["Measure<br/>our baseline"] --> B["Change<br/>one thing"]
-    B --> C["Measure again<br/>same tests"]
-    C --> D{"Better?"}
-    D -- Yes --> E["Keep it"]
-    D -- No --> F["Step back"]
+    A["Baseline<br/>fixed model + instructions"]
+    A -->|"AgentOps step 1"| B["Candidate 1<br/>Model Router"]
+    B -->|"AgentOps step 2"| C["Candidate 2<br/>optimized instructions"]
+    C --> D["Target<br/>best measured version"]
 ```
+
+### The AgentOps workflow for each step
+
+```mermaid
+flowchart TB
+    subgraph TOP[" "]
+        direction LR
+        A["1 · Run"] --> B["2 · Observe<br/>traces + latency"]
+        B --> C["3 · Evaluate<br/>quality + grounding"]
+    end
+    subgraph BOTTOM[" "]
+        direction RL
+        D["4 · Improve<br/>one lever"] --> E["5 · Compare<br/>same tests"]
+        E --> F{"6 · Uphill?"}
+    end
+    C --> D
+    F -- Yes --> G["Keep"]
+    F -- No --> H["Step back"]
+    style TOP fill:none,stroke:none
+    style BOTTOM fill:none,stroke:none
+```
+
+Foundry gives us the traces, evaluations, and versions that make each decision
+visible instead of relying on a feeling that the agent seems better.
 
 | Our step | Where we take it |
 |---|---|

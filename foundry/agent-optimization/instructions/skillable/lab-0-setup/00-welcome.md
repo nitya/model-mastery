@@ -73,8 +73,9 @@ those four words distinct on purpose — most agent bugs are really deployment o
 
 1. [] Read the loop you will run in Lab 2.
 
-    This loop is **AgentOps**: the practice of observing, evaluating, improving,
-    and versioning an agent after it is working.
+    The full route from baseline to target is our **hill climb**. At every step,
+    we repeat an **AgentOps** workflow: run, observe, evaluate, improve, and
+    compare.
 
     ```mermaid
     flowchart LR

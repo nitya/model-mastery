@@ -14,9 +14,9 @@ license, and attribution.
 - Deliverables: launch concept, three channel adaptations, image direction,
   evidence table, and a final claim-risk review.
 
-## Approved evidence
+## Facts we can use
 
-| Evidence ID | Source evidence | Approved wording |
+| Evidence ID | What the source tells us | Safe wording |
 | --- | --- | --- |
 | E1 | Product record/manual: product `TrailLite Daypack`; brand `HikeMate`; category `Backpacks`; best use `Hiking`; price `60.0`. | “The HikeMate TrailLite Daypack is a hiking backpack with a catalog price of $60.” |
 | E2 | Manual technical specs: dimensions `20in x 12in x 6in`; weight `1.5 lbs`. | “The TrailLite Daypack measures 20 in × 12 in × 6 in and weighs 1.5 lbs.” |
@@ -24,16 +24,16 @@ license, and attribution.
 | E4 | Manual features and caution: water-resistant against light rain and splashes, but not fully waterproof; do not submerge it or expose it to heavy rain without a rain cover or waterproofing protection. | “Water-resistant for light rain and splashes, but not waterproof; use protection in heavy rain and do not submerge.” |
 | E5 | Manual features/specs: hydration-system compatibility and reflective accents. | “Hydration-system compatible, with reflective accents.” |
 
-The ledger intentionally excludes broad marketing language and does not assign a
-numeric capacity. The source describes a spacious main compartment, but supplies
-no capacity measurement.
+We leave out broad marketing claims and do not give the pack a numeric capacity.
+The source calls the main compartment spacious, but it does not provide a
+capacity measurement.
 
-## Visually observable in the supplied image
+## What we can see in the image
 
-The image can support only these observations: a green daypack, shoulder straps,
-buckles, front and side storage areas, a bottle visible in a side pocket, and a
-trail setting. The bottle's presence does **not** mean a water bottle is included.
-These observations are image evidence, not product-record/manual evidence.
+We can see a green daypack, shoulder straps, buckles, front and side storage
+areas, a bottle in a side pocket, and a trail setting. We cannot assume the
+bottle is included. We’ll keep these visual details separate from facts that
+come from the product record and manual.
 
 ## Claim rules
 

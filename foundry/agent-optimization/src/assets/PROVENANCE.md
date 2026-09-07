@@ -18,6 +18,5 @@ repository and retained with its upstream attribution.
   (MIT)
 - Local license copy: [`contoso-web-MIT-LICENSE.md`](./contoso-web-MIT-LICENSE.md)
 
-The workshop evidence ledger selects a conservative subset of the product record
-and manual. Image observations are tracked separately and never used to infer
-nonvisual product facts.
+We use only the clear product facts from these sources. We also keep facts from
+the manual separate from details we can actually see in the image.

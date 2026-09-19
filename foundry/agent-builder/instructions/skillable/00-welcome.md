@@ -11,29 +11,77 @@ You'll work through three **Core Labs**:
 
 In the next 90 minutes, you will work through these labs using the Microsoft Foundry portal (low-code) and the GitHub Codespaces environment (code-first) - and build your intuition for the agentops loop and observability features in the platform.
 
-Let's get Started!
+> Let's get started by validating credentials.
 
-===
+## 1. Check Azure Credentials
 
-## Check Azure Credentials
+The workshop will use Skillable-provided Azure credentials. Verify that you have non-empty values for the following. 
 
-We will use Skillable-provided Azure credentials in this lab. Take a look at the username and password below and make sure they are non-empty values. We will make use of these soon.
+- **Username:** ++@lab.CloudPortalCredential(User1).Username++
+- **Password (TAP):** ++@lab.CloudPortalCredential(User1).AccessToken++
 
-**Username:** +++@lab.CloudPortalCredential(User1).Username+++
-**Password (TAP):** +++@lab.CloudPortalCredential(User1).AccessToken+++
 
----
-
-## Login into VM
-
-We will use the Windows VM seen to the left of this screen - specifically, we will be using the built-in browser with GitHub Codespaces as the runtime environment for this lab. Click on the VM screen now and use these credentials to login.
-
-**Username:** +++@lab.VirtualMachine(Windows11).Username+++   
-**Password:** +++@lab.VirtualMachine(Windows11).Password+++
-
+>[!tip] Clicking on the values will copy them to your clipboard to paste elsewhere.
 
 ---
 
-✅ **In this step:** You learned the objectives and logged into VM.
+## 2. Skillable VM Use
 
-➡️ **What's Next**: You'll launch a browser & setup the environment
+You will see a Windows VM with login to the right. In this workshop, we are _not_ using the VM - instead we will use a GitHub Codespaces environment in your browser to connect to the Skillable-provisioned infra.
+
+>[!tip] You can extend the instructions pane out to occupy more space since we are not using the VM.
+
+---
+
+## 3. Log into Azure Portal
+
+In this workshop, we will work completely within the browser. Make sure you have a modern browser on your laptop - we recommend Microsoft Edge.
+
+1. Launch the browser and open a new tab.
+1. Navigate to ++https://portal.azure.com++
+1. Login using the Azure credentials above
+1. You should see a single resource group provisioned. **Note the resource group name** You will need this later.
+
+>[!tip] The resource group name will look something like `rg-model-mondaysXXX`.
+
+---
+
+## 4. Log into Microsoft Foundry
+
+
+Click on the resource group to see details. You should 4 resources listed.
+
+1. Click on the Foundry resource to view details. You should see a `Go To Foundry` button.
+1. Click on the button. You should see a new tab open in Microsoft Foundry.
+1. Verify that you are logged into Foundry with the same Azure credential. You may need to sign in once and select the Skillable Azure account from the dialog.
+
+>[!tip] The landing page should have the Foundry endpoint and API key information. We will get this using a script later.
+
+---
+
+## 5. Verify Model Deployments
+
+Click on the `Build` tab in the navbar, then select the `Models` option in the sidebar.
+
+- You should see a list of deployed models in the project.
+- This should include two Claude models, two GPT models, `model-router` and `MAI-Image-2.5-Pro`.
+
+---
+
+## 6. Launch GitHub Codespaces
+
+Now we need to setup our development environment. We will use GitHub Codespaces for this - you must have a personal GitHub account for this.
+
+1. Visit ++https://aka.ms/model-mastery++
+1. Log into GitHub with your personal account
+1. Fork the repo to your personal profile
+1. Select the blue **Code** button in your fork, then pick the **Codespaces** tab.
+1. Click to create a new Codespace.
+
+>[!tip] The GitHub Codespaces will take a while to load. Wait till you see the Visual Studio Code terminal get an active prompt.
+
+---
+
+✅ **Congratulations:** Your Codespaces environment is ready to use. 
+
+➡️ **What's Next**: Open the `foundry/agent-builder/README.md` in the editor and setup your local environment by starting from **Step 5**.

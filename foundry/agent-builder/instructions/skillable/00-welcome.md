@@ -1,30 +1,19 @@
-# From Model Selection to Agent Optimization with Microsoft Foundry
+# Build and Optimize AI Agents on Microsoft Foundry
 
-Building your first AI agent feels simple. But keeping that agent running in a reliable and cost-effective manner gets more challenging. Model choices are exploding driving new cost and capability tradeoffs. Real-world usage can reveal edge use cases or new requirements for quality and performance. And, we need constant vigilance to ensure safe and secure operation. This is where end-to-end observability and continuous optimization become necessary. Microsoft Foundry makes it seamless.
 
-In this 90-minute workshop, we'll take you on a journey from plan to production as we build _TrailMate_ an AI agent that helps you find the right gear for your next outdoor adventure. The journey has three stages.
+In this workshop you'll learn to build _TrailMate_ an AI agent for an enterprise retail company that can help answer customer questions in a fast, cost-effective and reliable manner - grounded in the product catalog.
 
-**Stage 1: Setup** / Get familiar with Foundry
+You'll work through three **Core Labs**:
 
-- Explore the default Microsoft Foundry project
-- Create a test agent and try a sample prompt
-- Understand agent lifecycle and observability
+1. **Lab 0: Setup** - Validate your Foundry project is provisioned and setup the dev environment.
+2. **Lab 1: Model Selection** - Learn about different model types and build intuition for selection based on cost, latency or balance.
+3. **Lab 2: Agent Optimization** - Build TrailMate starting with a frontier model and generic instructions. Then hill climb to optimize it.
 
-**Stage 2: Model Selection** / Meet the Models
+In the next 90 minutes, you will work through these labs using the Microsoft Foundry portal (low-code) and the GitHub Codespaces environment (code-first) - and build your intuition for the agentops loop and observability features in the platform.
 
-- Explore chat completion, reasoning and vision capabilities
-- Learn to compare models by cost, quality and latency
-- Use model router to auto-select the right model for the task
+Let's get Started!
 
-**Stage 3: Agent Optimization** / Improve the Agent
-
-- Use traces and insights to understand issues
-- Build a rubric evaluator to measure outcomes
-- Use agent optimizer to start "hill climbing"
-
-By the end of the workshop, you'll have built your intuition for the agentops loop for continuous optimization. And, you will leave with a sandbox you can use to continue exploring more models and optimization levers in Foundry - at your own pace.
-
----
+===
 
 ## Check Azure Credentials
 
